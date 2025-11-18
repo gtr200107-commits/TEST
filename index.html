@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="pageTitle">LinguaSphere Pro - آموزش زبان با تکنولوژی پیشرفته</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="LinguaSphere Pro - پیشرفته‌ترین پلتفرم آموزش زبان با هوش مصنوعی و مدرسان برتر. تعیین سطح رایگان و یادگیری انگلیسی، آیلتس و تافل." data-i18n-attr="content:metaDescription">
+    <meta name="keywords" content="آموزش زبان, آیلتس, تافل, هوش مصنوعی, تعیین سطح رایگان, یادگیری آنلاین" data-i18n-attr="content:metaKeywords">
+    <meta name="author" content="LinguaSphere Pro">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://linguasphere-pro.com/">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://linguasphere-pro.com/">
+    <meta property="og:title" content="LinguaSphere Pro - آینده آموزش زبان">
+    <meta property="og:description" content="یادگیری زبان با متدولوژی‌های نوین و هوش مصنوعی.">
+    <meta property="og:image" content="https://placehold.co/1200x630/7c3aed/ffffff?text=LinguaSphere+Pro">
+
+    <!-- Fonts -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- CSS VARIABLES --- */
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --primary-glow: rgba(99, 102, 241, 0.5);
+            --secondary: #ec4899;
+            --accent: #10b981;
+            
+            /* Dark Theme (Default) */
+            --bg-body: #0f172a;
+            --bg-surface: rgba(30, 41, 59, 0.7);
+            --bg-glass: rgba(15, 23, 42, 0.85);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --gradient-cta: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(236, 72, 153, 0.2));
+            
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --blur: blur(12px);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            
+            --font-main: 'Vazir', sans-serif;
+            --font-display: 'Vazir', sans-serif;
+        }
+
+        [data-theme="light"] {
+            --bg-body: #f8fafc;
+            --bg-surface: rgba(255, 255, 255, 0.8);
+            --bg-glass: rgba(255, 255, 255, 0.9);
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: rgba(0, 0, 0, 0.08);
+            --primary: #4f46e5;
+            --primary-glow: rgba(79, 70, 229, 0.3);
+            --gradient-cta: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(236, 72, 153, 0.1));
+        }
+
+        html.ltr {
+            --font-main: 'Inter', sans-serif;
+            --font-display: 'Poppins', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+        
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-body);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(236, 72, 153, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.15) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        /* --- UTILITIES --- */
+        .container { width: 90%; max-width: 1280px; margin: 0 auto; padding: 0 1rem; }
+        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        
+        .section-padding { padding: 100px 0; }
+        .section-header { text-align: center; max-width: 800px; margin: 0 auto 4rem; }
+        .section-header h2 {
+            font-size: 3rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .section-header p { color: var(--text-muted); font-size: 1.1rem; }
+
+        /* --- BUTTONS --- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 0.875rem 2rem;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+            z-index: 1;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #ffffff;
+            box-shadow: 0 8px 20px var(--primary-glow);
+        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 25px var(--primary-glow); }
+        
+        .btn-glow {
+            background: var(--text-main);
+            color: var(--bg-body);
+            box-shadow: 0 0 20px rgba(255,255,255,0.5);
+        }
+        .btn-glow:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(255,255,255,0.8); }
+
+        /* --- HEADER --- */
+        header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.5rem 0; transition: var(--transition); }
+        header.scrolled { padding: 1rem 0; background: var(--bg-glass); backdrop-filter: var(--blur); border-bottom: 1px solid var(--border-color); }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.75rem; font-weight: 900; background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: flex; gap: 0.5rem; align-items: center; }
+        
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { font-weight: 600; color: var(--text-muted); position: relative; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+        
+        .icon-btn { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border-color); background: var(--bg-surface); color: var(--text-main); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: var(--transition); }
+        .icon-btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
+
+        /* --- HERO --- */
+        .hero { padding: 180px 0 100px; min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; }
+        .hero-content { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center; }
+        .hero-text h1 { font-size: 4rem; margin-bottom: 1.5rem; letter-spacing: -1px; }
+        .hero-text h1 span { color: var(--primary); }
+        .hero-text p { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 2.5rem; }
+        
+        /* --- LOGO MARQUEE --- */
+        .marquee-section { padding: 2rem 0; border-bottom: 1px solid var(--border-color); background: var(--bg-glass); overflow: hidden; }
+        .marquee-content { display: flex; gap: 4rem; animation: marquee 20s linear infinite; width: max-content; }
+        .marquee-item { font-size: 1.5rem; font-weight: bold; color: var(--text-muted); opacity: 0.5; display: flex; align-items: center; gap: 0.5rem; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        html[dir="rtl"] .marquee-content { animation: marqueeRTL 20s linear infinite; }
+        @keyframes marqueeRTL { 0% { transform: translateX(0); } 100% { transform: translateX(50%); } }
+
+        /* --- PLACEMENT TEST CTA (NEW & HEROIC) --- */
+        .cta-section { position: relative; border-radius: var(--radius-lg); overflow: hidden; margin: 4rem auto; text-align: center; padding: 6rem 2rem; background: var(--gradient-cta); border: 1px solid var(--border-color); }
+        .cta-bg-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%); opacity: 0.5; z-index: 0; pointer-events: none; }
+        .cta-content { position: relative; z-index: 1; }
+        .cta-badge { display: inline-block; background: var(--secondary); color: white; padding: 0.25rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: bold; margin-bottom: 1rem; box-shadow: 0 0 15px rgba(236, 72, 153, 0.5); animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+        /* --- ROADMAP / TIMELINE --- */
+        .roadmap-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; position: relative; }
+        .roadmap-step { background: var(--bg-surface); padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); position: relative; transition: var(--transition); }
+        .roadmap-step:hover { transform: translateY(-10px); border-color: var(--primary); }
+        .step-number { position: absolute; top: -20px; right: 20px; width: 40px; height: 40px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; box-shadow: 0 5px 15px var(--primary-glow); }
+        html.ltr .step-number { right: auto; left: 20px; }
+        
+        /* --- TESTIMONIALS --- */
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .testimonial-card { background: var(--bg-surface); padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); }
+        .user-profile { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+        .user-avatar { width: 50px; height: 50px; background: linear-gradient(45deg, var(--primary), var(--secondary)); border-radius: 50%; }
+        .rating { color: #fbbf24; margin-bottom: 1rem; }
+
+        /* --- FAQ --- */
+        .faq-item { margin-bottom: 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); background: var(--bg-surface); overflow: hidden; transition: var(--transition); }
+        .faq-header { padding: 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; }
+        .faq-body { padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; color: var(--text-muted); }
+        .faq-item.open .faq-body { padding-bottom: 1.5rem; max-height: 200px; }
+        .faq-icon { transition: transform 0.3s ease; }
+        .faq-item.open .faq-icon { transform: rotate(180deg); }
+
+        /* --- FOOTER --- */
+        footer { background: #020617; padding: 80px 0 30px; border-top: 1px solid var(--border-color); margin-top: 100px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 4rem; }
+        
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .hero-content { grid-template-columns: 1fr; text-align: center; }
+            .hero-image-wrapper { display: none; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Add mobile menu logic if needed */
+            .section-header h2 { font-size: 2rem; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <i class="fas fa-cube"></i>
+                <span>LinguaSphere</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home" data-i18n="nav_home">خانه</a></li>
+                <li><a href="#roadmap" data-i18n="nav_roadmap">مسیر یادگیری</a></li>
+                <li><a href="#courses" data-i18n="nav_courses">دوره‌ها</a></li>
+                <li><a href="#testimonials" data-i18n="nav_testimonials">نظرات</a></li>
+                <li><a href="#faq" data-i18n="nav_faq">سوالات</a></li>
+            </ul>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <button class="icon-btn" id="langToggle">EN</button>
+                <button class="icon-btn" id="themeToggle"><i class="fas fa-moon"></i></button>
+                <a href="#level-check" class="btn btn-primary" data-i18n="btn_start">شروع کنید</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1 data-i18n="hero_title">تسلط بر زبان، <br> <span>سریع‌تر از همیشه</span></h1>
+                    <p data-i18n="hero_desc">با ترکیب هوش مصنوعی پیشرفته و متدهای نوین، ما یادگیری زبان را به تجربه‌ای لذت‌بخش تبدیل می‌کنیم.</p>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="#level-check" class="btn btn-primary" data-i18n="btn_placement">تعیین سطح رایگان</a>
+                        <a href="#courses" class="btn btn-outline" data-i18n="btn_courses">مشاهده دوره‌ها</a>
+                    </div>
+                </div>
+                <!-- 3D Abstract Graphic Placeholder -->
+                <div class="hero-image-wrapper" style="position: relative; height: 400px; background: radial-gradient(circle, rgba(99,102,241,0.2) 0%, transparent 70%); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <div style="font-size: 10rem; color: var(--primary); opacity: 0.8; animation: float 6s ease-in-out infinite;"><i class="fas fa-globe-asia"></i></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marquee Logos -->
+        <div class="marquee-section">
+            <div class="marquee-content">
+                <div class="marquee-item"><i class="fab fa-google"></i> Google</div>
+                <div class="marquee-item"><i class="fab fa-microsoft"></i> Microsoft</div>
+                <div class="marquee-item"><i class="fas fa-university"></i> Oxford</div>
+                <div class="marquee-item"><i class="fab fa-amazon"></i> Amazon</div>
+                <div class="marquee-item"><i class="fas fa-graduation-cap"></i> Cambridge</div>
+                <div class="marquee-item"><i class="fab fa-apple"></i> Apple</div>
+                <!-- Duplicate for seamless loop -->
+                <div class="marquee-item"><i class="fab fa-google"></i> Google</div>
+                <div class="marquee-item"><i class="fab fa-microsoft"></i> Microsoft</div>
+                <div class="marquee-item"><i class="fas fa-university"></i> Oxford</div>
+            </div>
+        </div>
+
+        <!-- SMART LEVEL CHECK CTA (FEATURED) -->
+        <section id="level-check" class="container">
+            <div class="cta-section">
+                <div class="cta-bg-glow"></div>
+                <div class="cta-content">
+                    <span class="cta-badge" data-i18n="cta_badge">هوش مصنوعی 2.0</span>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;" data-i18n="cta_title">تعیین سطح هوشمند و رایگان</h2>
+                    <p style="max-width: 600px; margin: 0 auto 2.5rem; color: var(--text-muted); font-size: 1.1rem;" data-i18n="cta_desc">
+                        فقط در ۱۰ دقیقه، هوش مصنوعی ما سطح دقیق شما را تحلیل کرده و نقشه‌ی راه اختصاصی شما را ترسیم می‌کند. بدون هزینه، همین حالا شروع کنید.
+                    </p>
+                    <!-- Link to external page as requested -->
+                    <a href="YOUR_TEST_PAGE_URL_HERE" class="btn btn-glow" style="padding: 1rem 3rem; font-size: 1.2rem;">
+                        <i class="fas fa-brain"></i>
+                        <span data-i18n="btn_start_test">شروع آزمون هوشمند</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roadmap Section -->
+        <section class="section-padding" id="roadmap">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="roadmap_title">مسیر موفقیت شما</h2>
+                    <p data-i18n="roadmap_subtitle">ما از اولین قدم تا دریافت مدرک بین‌المللی در کنار شما هستیم.</p>
+                </div>
+                <div class="roadmap-grid">
+                    <div class="roadmap-step">
+                        <div class="step-number">1</div>
+                        <h3 data-i18n="step_1_title">تعیین سطح هوشمند</h3>
+                        <p style="color: var(--text-muted);" data-i18n="step_1_desc">تحلیل دقیق مهارت‌های شما با AI برای جلوگیری از اتلاف وقت.</p>
+                    </div>
+                    <div class="roadmap-step">
+                        <div class="step-number">2</div>
+                        <h3 data-i18n="step_2_title">برنامه اختصاصی</h3>
+                        <p style="color: var(--text-muted);" data-i18n="step_2_desc">دریافت تقویم آموزشی متناسب با هدف و زمان آزاد شما.</p>
+                    </div>
+                    <div class="roadmap-step">
+                        <div class="step-number">3</div>
+                        <h3 data-i18n="step_3_title">کلاس‌های تعاملی</h3>
+                        <p style="color: var(--text-muted);" data-i18n="step_3_desc">شرکت در کلاس‌های لایو و تمرین با اساتید نیتیو.</p>
+                    </div>
+                    <div class="roadmap-step">
+                        <div class="step-number">4</div>
+                        <h3 data-i18n="step_4_title">دریافت مدرک</h3>
+                        <p style="color: var(--text-muted);" data-i18n="step_4_desc">صدور گواهینامه معتبر بین‌المللی و قابل استعلام.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="section-padding" id="testimonials" style="background: rgba(0,0,0,0.02);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="testimonials_title">داستان‌های موفقیت</h2>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="user-profile">
+                            <div class="user-avatar"></div>
+                            <div>
+                                <h4>Ali Rezaei</h4>
+                                <small style="color: var(--text-muted);">IELTS Student</small>
+                            </div>
+                        </div>
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p style="color: var(--text-muted);" data-i18n="review_1">"سیستم تعیین سطح فوق‌العاده دقیق بود. دقیقاً از جایی شروع کردم که نیاز داشتم و در ۳ ماه نمره ۷ آیلتس گرفتم."</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="user-profile">
+                            <div class="user-avatar" style="background: linear-gradient(45deg, #f59e0b, #ef4444);"></div>
+                            <div>
+                                <h4>Sara Ahmadi</h4>
+                                <small style="color: var(--text-muted);">Business English</small>
+                            </div>
+                        </div>
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                        <p style="color: var(--text-muted);" data-i18n="review_2">"کلاس‌های مکالمه تجاری واقعاً کاربردی بود. الان بدون استرس در جلسات شرکت انگلیسی صحبت می‌کنم."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section-padding" id="faq">
+            <div class="container" style="max-width: 800px;">
+                <div class="section-header">
+                    <h2 data-i18n="faq_title">سوالات متداول</h2>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-header" onclick="toggleFaq(this)">
+                        <span data-i18n="faq_q1">آیا تعیین سطح واقعاً رایگان است؟</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-body">
+                        <p style="padding-bottom: 1.5rem;" data-i18n="faq_a1">بله، تعیین سطح هوشمند ما کاملاً رایگان است و نیازی به وارد کردن اطلاعات پرداخت نیست.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header" onclick="toggleFaq(this)">
+                        <span data-i18n="faq_q2">کلاس‌ها به چه صورت برگزار می‌شود؟</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-body">
+                        <p style="padding-bottom: 1.5rem;" data-i18n="faq_a2">تمامی کلاس‌ها در پلتفرم اختصاصی ما به صورت آنلاین و تعاملی (تصویری و صوتی) برگزار می‌شوند.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header" onclick="toggleFaq(this)">
+                        <span data-i18n="faq_q3">آیا مدرک پایان دوره معتبر است؟</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-body">
+                        <p style="padding-bottom: 1.5rem;" data-i18n="faq_a3">بله، مدارک ما دارای کد رهگیری بین‌المللی هستند و می‌توانید آن‌ها را در پروفایل لینکدین خود نیز قرار دهید.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="#" class="logo" style="margin-bottom: 1rem;"><i class="fas fa-cube"></i> LinguaSphere</a>
+                    <p style="color: var(--text-muted);" data-i18n="footer_desc">ما آموزش زبان را دموکراتیک، هوشمند و در دسترس همه قرار می‌دهیم.</p>
+                </div>
+                <div>
+                    <h4 data-i18n="footer_links">لینک‌ها</h4>
+                    <ul style="list-style: none; line-height: 2;">
+                        <li><a href="#" style="color: var(--text-muted);">درباره ما</a></li>
+                        <li><a href="#" style="color: var(--text-muted);">فرصت‌های شغلی</a></li>
+                        <li><a href="#" style="color: var(--text-muted);">وبلاگ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 data-i18n="footer_contact">تماس</h4>
+                    <ul style="list-style: none; line-height: 2;">
+                        <li style="color: var(--text-muted);">info@linguasphere.com</li>
+                        <li style="color: var(--text-muted);">+98 21 1234 5678</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 data-i18n="footer_social">شبکه‌های اجتماعی</h4>
+                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <a href="#" class="icon-btn"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="icon-btn"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="icon-btn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; border-top: 1px solid var(--border-color); margin-top: 3rem; padding-top: 2rem; color: var(--text-muted); font-size: 0.9rem;">
+                © 2024 LinguaSphere Pro. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        /* --- TRANSLATIONS --- */
+        const resources = {
+            fa: {
+                pageTitle: "LinguaSphere Pro - آموزش پیشرفته زبان",
+                nav_home: "خانه",
+                nav_roadmap: "مسیر یادگیری",
+                nav_courses: "دوره‌ها",
+                nav_testimonials: "نظرات",
+                nav_faq: "سوالات",
+                btn_start: "شروع کنید",
+                hero_title: "تسلط بر زبان، <br> <span>سریع‌تر از همیشه</span>",
+                hero_desc: "با ترکیب هوش مصنوعی پیشرفته و متدهای نوین، ما یادگیری زبان را به تجربه‌ای لذت‌بخش تبدیل می‌کنیم.",
+                btn_placement: "تعیین سطح رایگان",
+                btn_courses: "مشاهده دوره‌ها",
+                cta_badge: "هوش مصنوعی 2.0",
+                cta_title: "تعیین سطح هوشمند و رایگان",
+                cta_desc: "فقط در ۱۰ دقیقه، هوش مصنوعی ما سطح دقیق شما را تحلیل کرده و نقشه‌ی راه اختصاصی شما را ترسیم می‌کند. بدون هزینه، همین حالا شروع کنید.",
+                btn_start_test: "شروع آزمون هوشمند",
+                roadmap_title: "مسیر موفقیت شما",
+                roadmap_subtitle: "ما از اولین قدم تا دریافت مدرک بین‌المللی در کنار شما هستیم.",
+                step_1_title: "تعیین سطح هوشمند",
+                step_1_desc: "تحلیل دقیق مهارت‌های شما با AI برای جلوگیری از اتلاف وقت.",
+                step_2_title: "برنامه اختصاصی",
+                step_2_desc: "دریافت تقویم آموزشی متناسب با هدف و زمان آزاد شما.",
+                step_3_title: "کلاس‌های تعاملی",
+                step_3_desc: "شرکت در کلاس‌های لایو و تمرین با اساتید نیتیو.",
+                step_4_title: "دریافت مدرک",
+                step_4_desc: "صدور گواهینامه معتبر بین‌المللی و قابل استعلام.",
+                testimonials_title: "داستان‌های موفقیت",
+                review_1: "\"سیستم تعیین سطح فوق‌العاده دقیق بود. دقیقاً از جایی شروع کردم که نیاز داشتم و در ۳ ماه نمره ۷ آیلتس گرفتم.\"",
+                review_2: "\"کلاس‌های مکالمه تجاری واقعاً کاربردی بود. الان بدون استرس در جلسات شرکت انگلیسی صحبت می‌کنم.\"",
+                faq_title: "سوالات متداول",
+                faq_q1: "آیا تعیین سطح واقعاً رایگان است؟",
+                faq_a1: "بله، تعیین سطح هوشمند ما کاملاً رایگان است و نیازی به وارد کردن اطلاعات پرداخت نیست.",
+                faq_q2: "کلاس‌ها به چه صورت برگزار می‌شود؟",
+                faq_a2: "تمامی کلاس‌ها در پلتفرم اختصاصی ما به صورت آنلاین و تعاملی (تصویری و صوتی) برگزار می‌شوند.",
+                faq_q3: "آیا مدرک پایان دوره معتبر است؟",
+                faq_a3: "بله، مدارک ما دارای کد رهگیری بین‌المللی هستند و می‌توانید آن‌ها را در پروفایل لینکدین خود نیز قرار دهید.",
+                footer_desc: "ما آموزش زبان را دموکراتیک، هوشمند و در دسترس همه قرار می‌دهیم.",
+                footer_links: "لینک‌ها",
+                footer_contact: "تماس",
+                footer_social: "شبکه‌های اجتماعی"
+            },
+            en: {
+                pageTitle: "LinguaSphere Pro - Advanced Language Learning",
+                nav_home: "Home",
+                nav_roadmap: "Roadmap",
+                nav_courses: "Courses",
+                nav_testimonials: "Stories",
+                nav_faq: "FAQ",
+                btn_start: "Get Started",
+                hero_title: "Master Languages <br> <span>Faster Than Ever</span>",
+                hero_desc: "Combining advanced AI with modern methodology, we turn language learning into an enjoyable experience.",
+                btn_placement: "Free Assessment",
+                btn_courses: "View Courses",
+                cta_badge: "AI Powered 2.0",
+                cta_title: "Free Smart Placement Test",
+                cta_desc: "In just 10 minutes, our AI analyzes your exact level and draws your personalized roadmap. Start now for free.",
+                btn_start_test: "Start Smart Test",
+                roadmap_title: "Your Path to Success",
+                roadmap_subtitle: "We are with you from the first step to receiving your international certificate.",
+                step_1_title: "Smart Assessment",
+                step_1_desc: "Precise analysis of your skills with AI to prevent wasted time.",
+                step_2_title: "Personalized Plan",
+                step_2_desc: "Get a study calendar tailored to your goals and free time.",
+                step_3_title: "Interactive Classes",
+                step_3_desc: "Join live classes and practice with native tutors.",
+                step_4_title: "Get Certified",
+                step_4_desc: "Issuance of valid international and verifiable certificates.",
+                testimonials_title: "Success Stories",
+                review_1: "\"The placement system was incredibly accurate. I started exactly where I needed and got IELTS 7 in 3 months.\"",
+                review_2: "\"Business conversation classes were truly practical. I now speak English in company meetings without stress.\"",
+                faq_title: "Frequently Asked Questions",
+                faq_q1: "Is the placement test really free?",
+                faq_a1: "Yes, our smart assessment is completely free and requires no payment information.",
+                faq_q2: "How are classes conducted?",
+                faq_a2: "All classes are held online and interactively (video and audio) on our dedicated platform.",
+                faq_q3: "Is the certificate valid?",
+                faq_a3: "Yes, our certificates have international tracking codes and can be added to your LinkedIn profile.",
+                footer_desc: "We make language education democratic, smart, and accessible to everyone.",
+                footer_links: "Links",
+                footer_contact: "Contact",
+                footer_social: "Social Media"
+            }
+        };
+
+        let currentLang = 'fa';
+
+        // --- APP LOGIC ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // Theme Init
+            if(localStorage.getItem('theme') === 'light') toggleTheme();
+            
+            // Preloader
+            setTimeout(() => {
+                document.getElementById('preloader').style.opacity = 0;
+                document.getElementById('preloader').style.visibility = 'hidden';
+            }, 800);
+
+            // Events
+            document.getElementById('langToggle').addEventListener('click', toggleLanguage);
+            document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+            
+            // Scroll Observer
+            setupScrollReveal();
+            
+            // Header Scroll
+            window.addEventListener('scroll', () => {
+                const header = document.getElementById('header');
+                if(window.scrollY > 50) header.classList.add('scrolled');
+                else header.classList.remove('scrolled');
+            });
+        });
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'fa' ? 'en' : 'fa';
+            document.documentElement.setAttribute('lang', currentLang);
+            document.documentElement.setAttribute('dir', currentLang === 'fa' ? 'rtl' : 'ltr');
+            document.documentElement.className = currentLang === 'fa' ? '' : 'ltr';
+            
+            document.getElementById('langToggle').innerText = currentLang === 'fa' ? 'EN' : 'FA';
+            
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if(resources[currentLang][key]) el.innerHTML = resources[currentLang][key];
+            });
+        }
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const isLight = html.getAttribute('data-theme') === 'light';
+            const newTheme = isLight ? 'dark' : 'light';
+            
+            html.setAttribute('data-theme', newTheme);
+            document.getElementById('themeToggle').innerHTML = isLight ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+            localStorage.setItem('theme', newTheme);
+        }
+
+        function toggleFaq(header) {
+            const item = header.parentElement;
+            item.classList.toggle('open');
+        }
+
+        function setupScrollReveal() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+            
+            const elements = document.querySelectorAll('.roadmap-step, .testimonial-card, .faq-item, .cta-section');
+            elements.forEach((el, i) => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease';
+                el.style.transitionDelay = (i % 3) * 100 + 'ms';
+                observer.observe(el);
+            });
+        }
+        
+        // Placeholder for marquee if needed dynamic logic
+    </script>
+</body>
+</html>
