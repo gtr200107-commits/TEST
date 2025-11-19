@@ -3,641 +3,533 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>آزمون تعیین سطح هوشمند | LinguaSphere Pro</title>
+    <title>آزمون تعیین سطح هوشمند | موسسه ورسک</title>
     
     <!-- Fonts -->
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            /* Theme Colors matching Main Site */
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --secondary: #ec4899;
-            --accent: #10b981;
-            --danger: #ef4444;
-            --warning: #f59e0b;
+            --primary: #4f46e5;
+            --primary-dark: #3730a3;
+            --secondary: #db2777;
+            --accent: #06b6d4;
+            --success: #10b981;
             
-            /* Backgrounds */
             --bg-body: #0f172a;
-            --bg-surface: rgba(30, 41, 59, 0.7);
-            --bg-glass: rgba(15, 23, 42, 0.6);
+            --bg-surface: #1e293b;
+            --bg-glass: rgba(30, 41, 59, 0.7);
+            
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --border-color: rgba(255, 255, 255, 0.1);
+            --border: rgba(255, 255, 255, 0.1);
             
-            /* Difficulty Colors */
-            --diff-easy: #10b981;
-            --diff-medium: #f59e0b;
-            --diff-hard: #ef4444;
-            --diff-expert: #8b5cf6;
-
-            --radius-md: 16px;
-            --radius-lg: 24px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius: 16px;
+            --radius-sm: 8px;
         }
 
-        [data-theme="light"] {
-            --bg-body: #f0f2f5;
-            --bg-surface: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --border-color: #e2e8f0;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Vazir', sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Vazir', sans-serif; outline: none; }
         
         body {
             background-color: var(--bg-body);
             background-image: 
-                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(236, 72, 153, 0.15) 0px, transparent 50%);
+                radial-gradient(circle at 0% 0%, rgba(79, 70, 229, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(219, 39, 119, 0.15) 0%, transparent 50%);
             background-attachment: fixed;
             color: var(--text-main);
             min-height: 100vh;
+            padding: 1rem;
             display: flex;
             flex-direction: column;
-            padding: 2rem 1rem;
+            align-items: center;
         }
 
         .container {
             width: 100%;
-            max-width: 1000px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        /* --- HEADER & PROGRESS --- */
-        .quiz-header {
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        .quiz-title {
-            font-size: 2.5rem;
+        /* --- Header --- */
+        .header { text-align: center; padding: 2rem 0; }
+        .brand {
+            font-size: 2.2rem;
             font-weight: 900;
             background: linear-gradient(to right, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- Card Container --- */
+        .card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            transition: height 0.3s ease;
+        }
+
+        /* --- Auth Form Styles --- */
+        .form-title { font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center; color: var(--text-main); }
+        
+        .form-group { margin-bottom: 1.2rem; text-align: right; }
+        .form-group label { display: block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.9rem; }
+        
+        .input-field {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: white;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+        .input-field:focus { border-color: var(--primary); background: rgba(0, 0, 0, 0.4); }
+        
+        .btn-primary {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(79, 70, 229, 0.6); }
+
+        /* --- Quiz Styles --- */
+        .section-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(6, 182, 212, 0.15);
+            color: var(--accent);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
             margin-bottom: 1rem;
         }
 
-        .progress-wrapper {
-            background: var(--bg-surface);
-            padding: 1rem;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+        .progress-container {
+            background: rgba(255,255,255,0.05);
+            height: 6px;
+            border-radius: 3px;
             margin-bottom: 2rem;
-            backdrop-filter: blur(10px);
-        }
-
-        .progress-track {
-            flex: 1;
-            height: 10px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
             overflow: hidden;
         }
+        .progress-bar { height: 100%; background: var(--success); width: 0%; transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
 
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            width: 0%;
-            transition: width 0.5s ease;
-            border-radius: 10px;
-            box-shadow: 0 0 10px var(--primary);
-        }
-
-        .level-badge {
-            padding: 0.5rem 1rem;
-            background: var(--primary);
-            color: white;
-            border-radius: 12px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
-        }
-
-        /* --- QUIZ CARD --- */
-        .quiz-card {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: 3rem;
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(12px);
-            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.3);
-            min-height: 500px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .question-content {
-            flex: 1;
-            opacity: 1;
-            transform: translateX(0);
-            transition: var(--transition);
-        }
-
-        .question-content.fade-out {
-            opacity: 0;
-            transform: translateX(50px);
-        }
+        .question-text { font-size: 1.3rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.7; text-align: left; direction: ltr; }
         
-        .question-content.fade-in {
-            animation: slideIn 0.4s ease forwards;
-        }
-
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateX(-50px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        .q-meta {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
+        /* Reading Section */
+        .reading-box {
+            background: rgba(0,0,0,0.2);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            max-height: 200px;
+            overflow-y: auto;
+            text-align: left;
+            direction: ltr;
+            font-size: 1rem;
+            line-height: 1.8;
             color: var(--text-muted);
         }
+        .reading-box::-webkit-scrollbar { width: 6px; }
+        .reading-box::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 
-        .difficulty-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
-
-        .q-text {
-            font-size: 1.5rem;
-            font-weight: 800;
-            line-height: 1.6;
-            margin-bottom: 2.5rem;
-        }
-
-        .options-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
+        .options-grid { display: grid; gap: 0.8rem; }
         .option-btn {
             background: rgba(255,255,255,0.03);
-            border: 2px solid var(--border-color);
-            padding: 1.2rem;
-            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 10px;
             color: var(--text-main);
-            text-align: right;
+            text-align: left;
+            direction: ltr;
             cursor: pointer;
-            transition: var(--transition);
-            position: relative;
-            font-size: 1.1rem;
-        }
-
-        .option-btn:hover {
-            background: rgba(99, 102, 241, 0.1);
-            border-color: var(--primary);
-            transform: translateY(-2px);
-        }
-
-        .option-btn.selected {
-            background: var(--primary);
-            border-color: var(--primary);
-            color: white;
-            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
-        }
-
-        .option-btn.skip {
-            grid-column: span 2;
-            text-align: center;
-            border-color: var(--warning);
-            color: var(--warning);
-        }
-        
-        .option-btn.skip:hover {
-            background: var(--warning);
-            color: #000;
-        }
-
-        /* --- NAVIGATION --- */
-        .nav-actions {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 3rem;
-            border-top: 1px solid var(--border-color);
-            padding-top: 1.5rem;
-        }
-
-        .btn {
-            padding: 0.8rem 2rem;
-            border-radius: 12px;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
+            transition: all 0.2s;
             font-size: 1rem;
-            transition: var(--transition);
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 10px;
         }
+        .option-btn:hover { background: rgba(255,255,255,0.08); border-color: var(--primary); }
+        .option-btn.selected { background: var(--primary); border-color: var(--primary); color: white; }
 
-        .btn-next { background: var(--primary); color: white; }
-        .btn-next:hover { background: var(--primary-dark); box-shadow: 0 4px 15px var(--primary); }
-        
-        .btn-prev { background: transparent; color: var(--text-muted); border: 1px solid var(--border-color); }
-        .btn-prev:hover { background: rgba(255,255,255,0.1); color: var(--text-main); }
-
-        /* --- RESULTS SCREEN --- */
-        #results-screen {
-            display: none;
-            text-align: center;
-            animation: fadeIn 0.8s ease;
-        }
-
-        .score-circle {
-            width: 200px;
-            height: 200px;
+        /* --- Results --- */
+        .result-header { text-align: center; margin-bottom: 2rem; }
+        .level-circle {
+            width: 120px; height: 120px;
             border-radius: 50%;
-            background: conic-gradient(var(--primary) 0%, var(--bg-body) 0%);
-            margin: 0 auto 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: conic-gradient(var(--primary) 0%, transparent 0%);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1rem;
             position: relative;
-            box-shadow: 0 0 50px rgba(99, 102, 241, 0.2);
+            box-shadow: 0 0 30px rgba(79, 70, 229, 0.3);
         }
-
-        .score-circle::before {
-            content: '';
-            position: absolute;
-            width: 180px;
-            height: 180px;
+        .level-circle::after {
+            content: attr(data-level);
+            width: 100px; height: 100px;
             background: var(--bg-surface);
             border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2.5rem; font-weight: 900; color: white;
         }
 
-        .score-text {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .score-number { font-size: 3.5rem; font-weight: 900; color: var(--primary); line-height: 1; }
-        .score-label { font-size: 1rem; color: var(--text-muted); margin-top: 5px; }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1.5rem;
-            margin: 3rem 0;
-        }
-
-        .skill-item {
-            background: rgba(255,255,255,0.03);
+        .course-card {
+            background: linear-gradient(180deg, rgba(79, 70, 229, 0.1) 0%, rgba(30, 41, 59, 0) 100%);
+            border: 1px solid var(--primary);
+            border-radius: var(--radius);
             padding: 1.5rem;
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
+            margin: 2rem 0;
+            text-align: right;
         }
 
-        .skill-bar {
-            height: 6px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 3px;
-            margin-top: 10px;
-            overflow: hidden;
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 1rem;
+            border-radius: var(--radius-sm);
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            font-weight: bold;
+            transition: 0.3s;
         }
-        
-        .skill-fill { height: 100%; border-radius: 3px; width: 0; transition: width 1s ease 0.5s; }
+        .whatsapp-btn:hover { background: #1ebc57; transform: translateY(-2px); }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .options-grid { grid-template-columns: 1fr; }
-            .quiz-card { padding: 1.5rem; min-height: auto; }
-            .quiz-title { font-size: 1.8rem; }
+        /* Utilities */
+        .hidden { display: none; }
+        .fade-in { animation: fadeIn 0.5s ease forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media(max-width: 600px) {
+            .card { padding: 1.5rem; }
+            .brand { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <header class="quiz-header">
-            <h1 class="quiz-title">آزمون هوشمند LinguaSphere</h1>
-            <p style="color: var(--text-muted);">دقیق‌ترین ابزار تعیین سطح زبان با استفاده از هوش مصنوعی</p>
+        <header class="header">
+            <div class="brand">موسسه ورسک</div>
+            <p style="color: var(--text-muted);">سیستم هوشمند تعیین سطح و مشاوره</p>
         </header>
 
-        <!-- Quiz Container -->
-        <div id="quiz-container">
-            <div class="progress-wrapper">
-                <div class="level-badge" id="section-badge">بخش ۱: گرامر پایه</div>
-                <div class="progress-track">
-                    <div class="progress-fill" id="progress-bar"></div>
-                </div>
-                <div style="font-weight: bold; color: var(--primary);" id="q-number">1/60</div>
-            </div>
-
-            <div class="quiz-card">
-                <div class="question-content" id="question-box">
-                    <div class="q-meta">
-                        <span class="difficulty-tag" id="q-difficulty" style="background: rgba(16, 185, 129, 0.2); color: var(--diff-easy);">
-                            <i class="fas fa-signal"></i> آسان
-                        </span>
-                        <span id="q-timer"><i class="far fa-clock"></i> 00:45</span>
-                    </div>
-                    
-                    <h2 class="q-text" id="q-text">Loading question...</h2>
-                    
-                    <div class="options-grid" id="options-box">
-                        <!-- Options injected via JS -->
-                    </div>
-                </div>
-
-                <div class="nav-actions">
-                    <button class="btn btn-prev" id="btn-prev" onclick="prevQuestion()" disabled>
-                        <i class="fas fa-arrow-right"></i> قبلی
-                    </button>
-                    <button class="btn btn-next" id="btn-next" onclick="nextQuestion()">
-                        بعدی <i class="fas fa-arrow-left"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Results Container -->
-        <div id="results-screen" class="quiz-card">
-            <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">تحلیل عملکرد شما</h2>
-            
-            <div class="score-circle" id="score-circle">
-                <div class="score-text">
-                    <span class="score-number" id="final-level">B2</span>
-                    <span class="score-label">سطح نهایی</span>
-                </div>
-            </div>
-
-            <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">
-                تبریک! بر اساس پاسخ‌های شما، سطح زبان شما <strong style="color: var(--primary);" id="level-desc">Upper Intermediate</strong> ارزیابی شد.
+        <!-- VIEW 1: Registration / Login -->
+        <div id="view-auth" class="card fade-in">
+            <h2 class="form-title">شروع فرایند تعیین سطح</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: var(--text-muted); font-size: 0.9rem;">
+                برای دریافت کارنامه دقیق و ذخیره سوابق، لطفا مشخصات خود را وارد کنید.
             </p>
+            
+            <form id="authForm" onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label>نام</label>
+                    <input type="text" id="firstName" class="input-field" placeholder="مثال: علی" required>
+                </div>
+                <div class="form-group">
+                    <label>نام خانوادگی</label>
+                    <input type="text" id="lastName" class="input-field" placeholder="مثال: محمدی" required>
+                </div>
+                <div class="form-group">
+                    <label>شماره تماس (جهت ارسال نتایج)</label>
+                    <input type="tel" id="phone" class="input-field" placeholder="0912..." pattern="[0-9]{11}" required>
+                </div>
+                <div class="form-group">
+                    <label>تاریخ تولد</label>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                        <input type="number" id="birthDay" class="input-field" placeholder="روز" min="1" max="31" required>
+                        <input type="number" id="birthMonth" class="input-field" placeholder="ماه" min="1" max="12" required>
+                        <input type="number" id="birthYear" class="input-field" placeholder="سال" min="1300" max="1400" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary">ثبت اطلاعات و شروع آزمون</button>
+            </form>
+        </div>
 
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <div style="display:flex; justify-content:space-between; margin-bottom:5px;">
-                        <span><i class="fas fa-book"></i> گرامر</span>
-                        <span id="score-grammar">0%</span>
-                    </div>
-                    <div class="skill-bar"><div class="skill-fill" style="background: var(--accent);" id="bar-grammar"></div></div>
-                </div>
-                <div class="skill-item">
-                    <div style="display:flex; justify-content:space-between; margin-bottom:5px;">
-                        <span><i class="fas fa-spell-check"></i> لغات</span>
-                        <span id="score-vocab">0%</span>
-                    </div>
-                    <div class="skill-bar"><div class="skill-fill" style="background: var(--secondary);" id="bar-vocab"></div></div>
-                </div>
-                <div class="skill-item">
-                    <div style="display:flex; justify-content:space-between; margin-bottom:5px;">
-                        <span><i class="fas fa-comments"></i> مکالمه</span>
-                        <span id="score-speaking">0%</span>
-                    </div>
-                    <div class="skill-bar"><div class="skill-fill" style="background: var(--primary);" id="bar-speaking"></div></div>
-                </div>
-                <div class="skill-item">
-                    <div style="display:flex; justify-content:space-between; margin-bottom:5px;">
-                        <span><i class="fas fa-headphones"></i> شنیداری</span>
-                        <span id="score-listening">0%</span>
-                    </div>
-                    <div class="skill-bar"><div class="skill-fill" style="background: var(--warning);" id="bar-listening"></div></div>
-                </div>
+        <!-- VIEW 2: Quiz Interface -->
+        <div id="view-quiz" class="card hidden">
+            <div class="progress-container">
+                <div class="progress-bar" id="quiz-progress"></div>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span id="section-badge" class="section-badge">بخش عمومی</span>
+                <span id="q-counter" style="color: var(--text-muted); font-size: 0.9rem;">1/20</span>
             </div>
 
-            <div style="margin-top: 2rem;">
-                <a href="index.html#courses" class="btn btn-next" style="display: inline-flex; justify-content: center;">
-                    <i class="fas fa-graduation-cap"></i> مشاهده دوره‌های پیشنهادی
-                </a>
+            <!-- Reading Section Container (Only visible for reading questions) -->
+            <div id="reading-container" class="reading-box hidden">
+                <h4 style="color: var(--text-main); margin-bottom: 0.5rem;">Read the article:</h4>
+                <p id="article-text">Loading article...</p>
+            </div>
+
+            <h3 class="question-text" id="q-text">Question text goes here?</h3>
+            
+            <div class="options-grid" id="options-box">
+                <!-- Options injected via JS -->
             </div>
         </div>
 
+        <!-- VIEW 3: Results -->
+        <div id="view-result" class="card hidden">
+            <div class="result-header">
+                <h2 style="margin-bottom: 0.5rem;">کارنامه نهایی</h2>
+                <p style="color: var(--text-muted);">دانش‌پذیر: <span id="user-name-display" style="color: var(--text-main); font-weight: bold;">-</span></p>
+            </div>
+
+            <div class="level-circle" id="level-badge" data-level="B1"></div>
+            
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h3 id="level-title" style="font-size: 1.5rem; color: var(--primary);">متوسط (Intermediate)</h3>
+                <p id="level-desc" style="color: var(--text-muted); margin-top: 0.5rem; font-size: 0.9rem;">شما توانایی برقراری ارتباط در موقعیت‌های روزمره را دارید.</p>
+            </div>
+
+            <div class="course-card">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                    <i class="fas fa-graduation-cap" style="color: var(--secondary); font-size: 1.5rem;"></i>
+                    <div>
+                        <small style="color: var(--text-muted);">دوره پیشنهادی هوشمند</small>
+                        <h4 id="course-name" style="font-size: 1.2rem;">دوره مکالمه پیشرفته</h4>
+                    </div>
+                </div>
+                <p id="course-desc" style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+                    این دوره بر اساس نقاط ضعف شما در گرامر پیشرفته و درک مطلب طراحی شده است.
+                </p>
+            </div>
+
+            <p style="text-align: center; margin-bottom: 1rem; font-size: 0.9rem;">
+                اطلاعات شما در سیستم ورسک ثبت شد. برای نهایی کردن ثبت‌نام و دریافت برنامه کلاسی، به مشاور پیام دهید:
+            </p>
+            
+            <a href="https://wa.me/989331636454" class="whatsapp-btn">
+                <i class="fab fa-whatsapp" style="font-size: 1.4rem;"></i>
+                مشاوره و دریافت برنامه (09331636454)
+            </a>
+            <a href="index.html" style="display: block; text-align: center; margin-top: 1.5rem; color: var(--text-muted); font-size: 0.9rem;">بازگشت به خانه</a>
+        </div>
     </div>
 
     <script>
-        /* --- DATABASE OF QUESTIONS (COMPLETE - LEVELS 1 to 6) --- */
-        // A subset of 60 questions generated for brevity and functionality.
-        // Structure allows easy expansion.
-        const questionsDB = [
-            // --- LEVEL 1: BEGINNER (A1) ---
-            { id: 1, level: 'A1', category: 'grammar', text: "I _____ from Iran.", options: ["is", "am", "are", "be"], correct: 1 },
-            { id: 2, level: 'A1', category: 'vocab', text: "My father's brother is my _____.", options: ["cousin", "uncle", "aunt", "nephew"], correct: 1 },
-            { id: 3, level: 'A1', category: 'grammar', text: "She _____ breakfast at 7 AM.", options: ["eat", "eats", "eating", "ate"], correct: 1 },
-            { id: 4, level: 'A1', category: 'grammar', text: "_____ you like coffee?", options: ["Does", "Do", "Is", "Are"], correct: 1 },
-            { id: 5, level: 'A1', category: 'vocab', text: "Opposite of 'Big' is:", options: ["Large", "Huge", "Small", "Tall"], correct: 2 },
-            
-            // --- LEVEL 2: ELEMENTARY (A2) ---
-            { id: 6, level: 'A2', category: 'grammar', text: "We _____ to the cinema last night.", options: ["go", "went", "gone", "going"], correct: 1 },
-            { id: 7, level: 'A2', category: 'vocab', text: "A place where you can buy books:", options: ["Library", "Bookstore", "Pharmacy", "Gym"], correct: 1 },
-            { id: 8, level: 'A2', category: 'grammar', text: "There isn't _____ milk in the fridge.", options: ["some", "any", "many", "a"], correct: 1 },
-            { id: 9, level: 'A2', category: 'speaking', text: "Could you _____ me a favor?", options: ["make", "do", "give", "take"], correct: 1 },
-            { id: 10, level: 'A2', category: 'grammar', text: "This car is _____ than that one.", options: ["expensive", "more expensive", "expensiver", "most expensive"], correct: 1 },
-
-            // --- LEVEL 3: INTERMEDIATE (B1) ---
-            { id: 11, level: 'B1', category: 'grammar', text: "I have lived here _____ 2010.", options: ["for", "since", "ago", "during"], correct: 1 },
-            { id: 12, level: 'B1', category: 'vocab', text: "To 'give up' means to:", options: ["Start", "Continue", "Stop", "Enjoy"], correct: 2 },
-            { id: 13, level: 'B1', category: 'grammar', text: "If I _____ you, I would study harder.", options: ["was", "were", "am", "be"], correct: 1 },
-            { id: 14, level: 'B1', category: 'vocab', text: "Someone who is 'reliable' is:", options: ["Funny", "Trustworthy", "Lazy", "Rich"], correct: 1 },
-            { id: 15, level: 'B1', category: 'grammar', text: "The house _____ built in 1990.", options: ["is", "was", "has", "did"], correct: 1 },
-
-            // --- LEVEL 4: UPPER INTERMEDIATE (B2) ---
-            { id: 16, level: 'B2', category: 'vocab', text: "Which word is a synonym for 'Obstacle'?", options: ["Barrier", "Path", "Assist", "Goal"], correct: 0 },
-            { id: 17, level: 'B2', category: 'grammar', text: "I prefer tea _____ coffee.", options: ["than", "to", "from", "over"], correct: 1 },
-            { id: 18, level: 'B2', category: 'grammar', text: "By next year, I _____ graduated from university.", options: ["will", "will have", "will be", "have"], correct: 1 },
-            { id: 19, level: 'B2', category: 'vocab', text: "The meeting was _____ due to the storm.", options: ["called off", "called in", "called out", "called up"], correct: 0 },
-            { id: 20, level: 'B2', category: 'speaking', text: "I'm looking forward _____ you.", options: ["to see", "seeing", "to seeing", "see"], correct: 2 },
-
-            // --- LEVEL 5: ADVANCED (C1) ---
-            { id: 21, level: 'C1', category: 'vocab', text: "The word 'Ubiquitous' means:", options: ["Rare", "Found everywhere", "Expensive", "Hidden"], correct: 1 },
-            { id: 22, level: 'C1', category: 'grammar', text: "Seldom _____ such a beautiful view.", options: ["I have seen", "have I seen", "did I saw", "saw I"], correct: 1 },
-            { id: 23, level: 'C1', category: 'vocab', text: "He was _____ of the crime.", options: ["acquitted", "committed", "prohibited", "subscribed"], correct: 0 },
-            { id: 24, level: 'C1', category: 'grammar', text: "It's high time we _____ home.", options: ["go", "went", "have gone", "will go"], correct: 1 },
-            { id: 25, level: 'C1', category: 'vocab', text: "Meaning of 'Eloquent':", options: ["Fluent and persuasive", "Quiet and shy", "Rude", "Confused"], correct: 0 },
-
-            // --- LEVEL 6: PROFICIENT (C2) ---
-            { id: 26, level: 'C2', category: 'vocab', text: "An 'Ephemeral' joy is:", options: ["Everlasting", "Short-lived", "Intense", "Fake"], correct: 1 },
-            { id: 27, level: 'C2', category: 'grammar', text: "Had I known, I _____ differently.", options: ["would act", "will act", "would have acted", "acted"], correct: 2 },
-            { id: 28, level: 'C2', category: 'vocab', text: "To 'Prevaricate' means to:", options: ["Speak truthfully", "Avoid the truth", "Plan ahead", "Delay"], correct: 1 },
-            { id: 29, level: 'C2', category: 'vocab', text: "The sheer _____ of the project was overwhelming.", options: ["audacity", "magnitude", "veracity", "duplicity"], correct: 1 },
-            { id: 30, level: 'C2', category: 'grammar', text: "Try _____ he might, he couldn't open the door.", options: ["as", "like", "although", "however"], correct: 0 }
+        // --- DATABASE ---
+        
+        // Part 1: General Questions (Grammar & Vocab) - Mix of levels
+        const generalQuestions = [
+            { text: "I _____ a student.", options: ["is", "are", "am", "be"], correct: 2, level: "A1" },
+            { text: "She _____ to the park yesterday.", options: ["go", "went", "gone", "going"], correct: 1, level: "A1" },
+            { text: "Can you give me _____ water?", options: ["a", "an", "some", "any"], correct: 2, level: "A2" },
+            { text: "This book is _____ than that one.", options: ["good", "better", "best", "gooder"], correct: 1, level: "A2" },
+            { text: "I have been living here _____ 2010.", options: ["since", "for", "ago", "in"], correct: 0, level: "B1" },
+            { text: "If it rains, we _____ stay at home.", options: ["would", "will", "did", "had"], correct: 1, level: "B1" },
+            { text: "The man _____ car was stolen called the police.", options: ["who", "which", "whose", "whom"], correct: 2, level: "B1" },
+            { text: "I look forward _____ you soon.", options: ["to see", "seeing", "to seeing", "see"], correct: 2, level: "B2" },
+            { text: "The meeting was _____ due to heavy snow.", options: ["called off", "called in", "called out", "called for"], correct: 0, level: "B2" },
+            { text: "I wish I _____ harder for the exam.", options: ["study", "have studied", "had studied", "would study"], correct: 2, level: "B2" },
+            { text: "Scarcely had he arrived _____ the phone rang.", options: ["when", "than", "then", "after"], correct: 0, level: "C1" },
+            { text: "The government is contemplating _____ taxes.", options: ["to raise", "raising", "raise", "to raising"], correct: 1, level: "C1" },
+            { text: "Despite _____ tired, he continued working.", options: ["he was", "of being", "being", "be"], correct: 2, level: "C1" },
+            { text: "It's high time you _____ a job.", options: ["find", "found", "have found", "will find"], correct: 1, level: "C1" }
         ];
 
-        // --- APP STATE ---
-        let currentQuestionIndex = 0;
-        let userAnswers = new Array(questionsDB.length).fill(null);
-        
-        // --- INITIALIZATION ---
-        document.addEventListener('DOMContentLoaded', () => {
-            renderQuestion(0);
-            updateProgress();
-        });
+        // Part 2: Reading Comprehension
+        const readingPassage = {
+            id: "tech_01",
+            title: "The Impact of AI",
+            text: "Artificial Intelligence (AI) is rapidly transforming industries across the globe. From healthcare, where algorithms analyze medical images with increasing accuracy, to finance, where AI models predict market trends, the technology is becoming ubiquitous. However, this rapid advancement raises ethical concerns. Issues such as data privacy, algorithmic bias, and job displacement are at the forefront of discussions among policymakers. While proponents argue that AI will create more jobs than it destroys by streamlining repetitive tasks, critics worry about the widening gap between skilled and unskilled labor.",
+            questions: [
+                { text: "What is the main idea of the passage?", options: ["AI is only useful in healthcare.", "AI brings benefits but also raises ethical concerns.", "AI will destroy all jobs.", "Finance is the only industry using AI."], correct: 1, level: "B2" },
+                { text: "According to the text, why do critics worry?", options: ["AI is too slow.", "AI cannot analyze images.", "The gap between skilled and unskilled labor might widen.", "Policymakers are not discussing AI."], correct: 2, level: "B2" },
+                { text: "The word 'ubiquitous' in the text is closest in meaning to:", options: ["Rare", "Expensive", "Everywhere", "Dangerous"], correct: 2, level: "C1" },
+                { text: "Proponents of AI suggest that:", options: ["It will streamline repetitive tasks.", "It will cause job losses only.", "It should be banned.", "It is not accurate."], correct: 0, level: "B2" }
+            ]
+        };
 
-        // --- CORE FUNCTIONS ---
+        // Courses Info
+        const courses = {
+            'A1': { name: "دوره جامع استارتر (Starter)", desc: "شروع از صفر مطلق. تمرکز بر الفبا، اعداد و جملات پایه." },
+            'A2': { name: "دوره مکالمه مقدماتی (Elementary)", desc: "یادگیری مکالمات روزمره، خرید، سفر و گرامر پایه." },
+            'B1': { name: "دوره متوسطه (Pre-Intermediate)", desc: "افزایش دامنه لغات و توانایی صحبت درباره موضوعات انتزاعی." },
+            'B2': { name: "دوره پیشرفته (Upper-Intermediate)", desc: "آمادگی برای محیط‌های کاری بین‌المللی و تماشای فیلم بدون زیرنویس." },
+            'C1': { name: "دوره تخصصی آیلتس/تافل", desc: "تکنیک‌های آزمون، رایتینگ آکادمیک و متون پیچیده." }
+        };
 
-        function renderQuestion(index) {
-            const q = questionsDB[index];
-            const qBox = document.getElementById('question-box');
+        // --- STATE ---
+        let userProfile = {};
+        let currentQIndex = 0;
+        let score = 0;
+        let totalPossibleScore = 0; // Weighted score tracking
+        let quizPhase = 'general'; // 'general' or 'reading'
+        let activeQuestions = [];
+
+        // --- FUNCTIONS ---
+
+        function handleRegister(e) {
+            e.preventDefault();
             
-            // Animate Out
-            qBox.classList.add('fade-out');
-            
-            setTimeout(() => {
-                // Update Content
-                document.getElementById('q-number').innerText = `${index + 1}/${questionsDB.length}`;
-                document.getElementById('q-text').innerText = `${index + 1}. ${q.text}`;
-                document.getElementById('section-badge').innerText = `سطح: ${q.level}`;
-                
-                // Update Difficulty Color
-                const diffTag = document.getElementById('q-difficulty');
-                if(q.level === 'A1' || q.level === 'A2') { diffTag.style.color = 'var(--diff-easy)'; diffTag.innerHTML = '<i class="fas fa-seedling"></i> مقدماتی'; }
-                else if(q.level === 'B1' || q.level === 'B2') { diffTag.style.color = 'var(--diff-medium)'; diffTag.innerHTML = '<i class="fas fa-mountain"></i> متوسط'; }
-                else { diffTag.style.color = 'var(--diff-expert)'; diffTag.innerHTML = '<i class="fas fa-crown"></i> پیشرفته'; }
+            // Save User Data
+            userProfile = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                phone: document.getElementById('phone').value,
+                birthDate: `${document.getElementById('birthYear').value}/${document.getElementById('birthMonth').value}/${document.getElementById('birthDay').value}`
+            };
 
-                // Render Options
-                const optionsContainer = document.getElementById('options-box');
-                optionsContainer.innerHTML = '';
-                
-                q.options.forEach((opt, i) => {
-                    const btn = document.createElement('div');
-                    btn.className = `option-btn ${userAnswers[index] === i ? 'selected' : ''}`;
-                    btn.innerText = opt;
-                    btn.onclick = () => selectOption(index, i);
-                    optionsContainer.appendChild(btn);
-                });
+            // Simple LocalStorage Save (Simulating Login)
+            localStorage.setItem('veresk_user', JSON.stringify(userProfile));
 
-                // Skip Button
-                const skipBtn = document.createElement('div');
-                skipBtn.className = `option-btn skip ${userAnswers[index] === -1 ? 'selected' : ''}`;
-                skipBtn.innerText = "نمی‌دانم (عبور)";
-                skipBtn.onclick = () => selectOption(index, -1);
-                optionsContainer.appendChild(skipBtn);
+            // Switch View
+            document.getElementById('view-auth').classList.add('hidden');
+            document.getElementById('view-quiz').classList.remove('hidden');
+            document.getElementById('view-quiz').classList.add('fade-in');
 
-                // Animate In
-                qBox.classList.remove('fade-out');
-                qBox.classList.add('fade-in');
-                setTimeout(() => qBox.classList.remove('fade-in'), 400);
-                
-                // Update Buttons
-                document.getElementById('btn-prev').disabled = index === 0;
-                document.getElementById('btn-next').innerHTML = index === questionsDB.length - 1 ? 'پایان آزمون <i class="fas fa-check"></i>' : 'بعدی <i class="fas fa-arrow-left"></i>';
-
-            }, 300);
+            startQuiz();
         }
 
-        function selectOption(qIndex, optionIndex) {
-            userAnswers[qIndex] = optionIndex;
-            renderQuestion(qIndex); // Re-render to show selection state
-            
-            // Auto next after short delay if not skipping
-            if(optionIndex !== -1 && qIndex < questionsDB.length - 1) {
-                // Optional: setTimeout(nextQuestion, 800);
+        function startQuiz() {
+            // Initialize General Section
+            quizPhase = 'general';
+            activeQuestions = generalQuestions;
+            currentQIndex = 0;
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            // Check if we need to switch to Reading Phase
+            if (quizPhase === 'general' && currentQIndex >= activeQuestions.length) {
+                quizPhase = 'reading';
+                activeQuestions = readingPassage.questions;
+                currentQIndex = 0;
+                
+                // Show Reading UI
+                const readingBox = document.getElementById('reading-container');
+                readingBox.classList.remove('hidden');
+                readingBox.classList.add('fade-in');
+                document.getElementById('article-text').innerText = readingPassage.text;
+                document.getElementById('section-badge').innerText = "بخش درک مطلب (Reading)";
+                document.getElementById('section-badge').style.background = "rgba(236, 72, 153, 0.15)";
+                document.getElementById('section-badge').style.color = "var(--secondary)";
             }
-        }
 
-        function nextQuestion() {
-            if (currentQuestionIndex < questionsDB.length - 1) {
-                currentQuestionIndex++;
-                renderQuestion(currentQuestionIndex);
-                updateProgress();
-            } else {
+            // Check End of Quiz
+            if (quizPhase === 'reading' && currentQIndex >= activeQuestions.length) {
                 finishQuiz();
+                return;
             }
+
+            const q = activeQuestions[currentQIndex];
+            
+            // Update Counters
+            const totalQs = generalQuestions.length + readingPassage.questions.length;
+            const absoluteIndex = quizPhase === 'general' ? currentQIndex : generalQuestions.length + currentQIndex;
+            document.getElementById('q-counter').innerText = `${absoluteIndex + 1}/${totalQs}`;
+            
+            const progressPct = ((absoluteIndex) / totalQs) * 100;
+            document.getElementById('quiz-progress').style.width = `${progressPct}%`;
+
+            // Render Text & Options
+            document.getElementById('q-text').innerText = q.text;
+            const optionsBox = document.getElementById('options-box');
+            optionsBox.innerHTML = '';
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn';
+                
+                // Add A, B, C, D labels for better readability
+                const label = String.fromCharCode(65 + idx); // A, B, C...
+                btn.innerHTML = `<span style="font-weight:bold; color:var(--primary); min-width:20px;">${label}.</span> ${opt}`;
+                
+                btn.onclick = () => handleAnswer(idx, q);
+                optionsBox.appendChild(btn);
+            });
         }
 
-        function prevQuestion() {
-            if (currentQuestionIndex > 0) {
-                currentQuestionIndex--;
-                renderQuestion(currentQuestionIndex);
-                updateProgress();
+        function handleAnswer(selectedIndex, question) {
+            // Calculate Weighted Score
+            let weight = 1;
+            if (question.level === 'B1' || question.level === 'B2') weight = 2;
+            if (question.level === 'C1') weight = 3;
+            
+            totalPossibleScore += weight;
+
+            if (selectedIndex === question.correct) {
+                score += weight;
+                // UI Feedback (Green)
+                event.target.closest('.option-btn').style.background = 'rgba(16, 185, 129, 0.2)';
+                event.target.closest('.option-btn').style.borderColor = '#10b981';
+            } else {
+                // UI Feedback (Red)
+                event.target.closest('.option-btn').style.background = 'rgba(239, 68, 68, 0.2)';
+                event.target.closest('.option-btn').style.borderColor = '#ef4444';
             }
-        }
 
-        function updateProgress() {
-            const percent = ((currentQuestionIndex + 1) / questionsDB.length) * 100;
-            document.getElementById('progress-bar').style.width = `${percent}%`;
+            // Delay for UX
+            setTimeout(() => {
+                currentQIndex++;
+                renderQuestion();
+            }, 600);
         }
-
-        // --- SCORING LOGIC ---
 
         function finishQuiz() {
-            document.getElementById('quiz-container').style.display = 'none';
-            document.getElementById('results-screen').style.display = 'block';
+            document.getElementById('view-quiz').classList.add('hidden');
+            document.getElementById('view-result').classList.remove('hidden');
+            document.getElementById('view-result').classList.add('fade-in');
+
+            // Fill User Name
+            document.getElementById('user-name-display').innerText = `${userProfile.firstName} ${userProfile.lastName}`;
+
+            // Calculate Percentage
+            const finalPct = (score / totalPossibleScore) * 100;
             
-            calculateResults();
+            let level = 'A1';
+            let color = '#10b981'; // green
+            
+            if (finalPct > 20) level = 'A2';
+            if (finalPct > 40) { level = 'B1'; color = '#06b6d4'; } // cyan
+            if (finalPct > 65) { level = 'B2'; color = '#4f46e5'; } // indigo
+            if (finalPct > 85) { level = 'C1'; color = '#db2777'; } // pink
+
+            // Update UI Elements
+            const badge = document.getElementById('level-badge');
+            badge.setAttribute('data-level', level);
+            badge.style.background = `conic-gradient(${color} ${finalPct}%, transparent 0%)`;
+            
+            // Update Titles
+            document.getElementById('level-title').style.color = color;
+            
+            const course = courses[level];
+            document.getElementById('level-title').innerText = course.name.split(' (')[0];
+            document.getElementById('level-desc').innerText = course.desc; // Using desc as subtitle too
+            
+            document.getElementById('course-name').innerText = course.name;
+            document.getElementById('course-desc').innerText = course.desc;
         }
 
-        function calculateResults() {
-            let score = 0;
-            let categoryScores = { grammar: 0, vocab: 0, speaking: 0, listening: 0 }; // Simulating listening based on general score
-            let categoryCounts = { grammar: 0, vocab: 0, speaking: 0, listening: 0 };
-            
-            userAnswers.forEach((ans, i) => {
-                const q = questionsDB[i];
-                // Increment total possible for category
-                categoryCounts[q.category] = (categoryCounts[q.category] || 0) + 1;
-                
-                if (ans === q.correct) {
-                    // Weighted scoring: Higher levels give more points
-                    let weight = 1;
-                    if(q.level === 'B1' || q.level === 'B2') weight = 2;
-                    if(q.level === 'C1' || q.level === 'C2') weight = 3;
-                    
-                    score += weight;
-                    categoryScores[q.category] = (categoryScores[q.category] || 0) + 1;
-                }
-            });
-
-            // Determine Level based on raw correctness (simplified logic)
-            let correctCount = userAnswers.filter((ans, i) => ans === questionsDB[i].correct).length;
-            let percentage = (correctCount / questionsDB.length) * 100;
-            
-            let finalLevel = 'A1';
-            let levelDesc = "Elementary";
-            let circleColor = "var(--diff-easy)";
-
-            if(percentage > 90) { finalLevel = 'C2'; levelDesc = "Proficient (Mastery)"; circleColor = "var(--diff-expert)"; }
-            else if(percentage > 75) { finalLevel = 'C1'; levelDesc = "Advanced"; circleColor = "var(--diff-expert)"; }
-            else if(percentage > 60) { finalLevel = 'B2'; levelDesc = "Upper Intermediate"; circleColor = "var(--primary)"; }
-            else if(percentage > 40) { finalLevel = 'B1'; levelDesc = "Intermediate"; circleColor = "var(--diff-medium)"; }
-            else if(percentage > 20) { finalLevel = 'A2'; levelDesc = "Elementary"; circleColor = "var(--diff-easy)"; }
-
-            // Update UI
-            document.getElementById('final-level').innerText = finalLevel;
-            document.getElementById('final-level').style.color = circleColor;
-            document.getElementById('level-desc').innerText = levelDesc;
-            
-            // Update Circle Chart
-            document.getElementById('score-circle').style.background = `conic-gradient(${circleColor} ${percentage}%, var(--bg-body) 0%)`;
-
-            // Update Skill Bars
-            updateSkillBar('grammar', categoryScores.grammar, categoryCounts.grammar);
-            updateSkillBar('vocab', categoryScores.vocab, categoryCounts.vocab);
-            updateSkillBar('speaking', categoryScores.speaking, categoryCounts.speaking);
-            // Simulate listening as average of vocab + grammar for demo
-            let listScore = (categoryScores.grammar + categoryScores.vocab) / 2;
-            let listTotal = (categoryCounts.grammar + categoryCounts.vocab) / 2;
-            updateSkillBar('listening', listScore, listTotal);
-        }
-
-        function updateSkillBar(id, score, total) {
-            if (total === 0) total = 1; // prevent divide by zero
-            const pct = Math.round((score / total) * 100);
-            document.getElementById(`score-${id}`).innerText = `${pct}%`;
-            document.getElementById(`bar-${id}`).style.width = `${pct}%`;
-        }
+        // Check for existing login (Optional feature)
+        window.addEventListener('load', () => {
+            const savedUser = localStorage.getItem('veresk_user');
+            if(savedUser) {
+                const u = JSON.parse(savedUser);
+                document.getElementById('firstName').value = u.firstName;
+                document.getElementById('lastName').value = u.lastName;
+                document.getElementById('phone').value = u.phone;
+                // We could auto-login, but for "Assessment" usually people want to re-take or register fresh.
+                // So we just pre-fill but don't auto-start.
+            }
+        });
 
     </script>
 </body>
