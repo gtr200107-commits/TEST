@@ -3,668 +3,700 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="pageTitle">LinguaSphere Pro - آموزش زبان با تکنولوژی پیشرفته</title>
+    <title data-i18n="pageTitle">موسسه زبان ورسک | Veresk - آموزش هوشمند و تعاملی زبان</title>
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="LinguaSphere Pro - پیشرفته‌ترین پلتفرم آموزش زبان با هوش مصنوعی و مدرسان برتر. تعیین سطح رایگان و یادگیری انگلیسی، آیلتس و تافل." data-i18n-attr="content:metaDescription">
-    <meta name="keywords" content="آموزش زبان, آیلتس, تافل, هوش مصنوعی, تعیین سطح رایگان, یادگیری آنلاین" data-i18n-attr="content:metaKeywords">
-    <meta name="author" content="LinguaSphere Pro">
+    <!-- --- POWERFUL SEO METADATA --- -->
+    <meta name="description" content="موسسه زبان ورسک (Veresk) با متدولوژی VIP و هوش مصنوعی. آموزش آیلتس، تافل و مکالمه با ضمانت یادگیری. تعیین سطح رایگان و هوشمند." data-i18n-attr="content:metaDescription">
+    <meta name="keywords" content="موسسه زبان ورسک, آموزش زبان انگلیسی, آیلتس تضمینی, تافل, هوش مصنوعی در زبان, مکالمه فشرده, تعیین سطح آنلاین" data-i18n-attr="content:metaKeywords">
+    <meta name="author" content="Veresk Institute">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://linguasphere-pro.com/">
+    <link rel="canonical" href="https://veresk-institute.com/">
     
-    <!-- Open Graph -->
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://linguasphere-pro.com/">
-    <meta property="og:title" content="LinguaSphere Pro - آینده آموزش زبان">
-    <meta property="og:description" content="یادگیری زبان با متدولوژی‌های نوین و هوش مصنوعی.">
-    <meta property="og:image" content="https://placehold.co/1200x630/7c3aed/ffffff?text=LinguaSphere+Pro">
+    <meta property="og:url" content="https://veresk-institute.com/">
+    <meta property="og:title" content="موسسه زبان ورسک - آینده یادگیری اینجاست">
+    <meta property="og:description" content="تجربه یادگیری زبان با تکنولوژی 3D و هوش مصنوعی در ورسک.">
+    <meta property="og:image" content="https://placehold.co/1200x630/4f46e5/ffffff?text=Veresk+Institute">
 
-    <!-- Fonts -->
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://veresk-institute.com/">
+    <meta property="twitter:title" content="موسسه زبان ورسک">
+    <meta property="twitter:description" content="آموزش زبان متفاوت و هوشمند.">
+    <meta property="twitter:image" content="https://placehold.co/1200x630/4f46e5/ffffff?text=Veresk+Institute">
+
+    <!-- Schema.org JSON-LD (Google Rich Snippets) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Veresk Institute",
+      "url": "https://veresk-institute.com",
+      "logo": "https://placehold.co/512x512/4f46e5/ffffff?text=V",
+      "sameAs": [
+        "https://instagram.com/veresk",
+        "https://linkedin.com/company/veresk"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Valiasr Street",
+        "addressLocality": "Tehran",
+        "addressCountry": "IR"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+98-933-163-6454",
+        "contactType": "customer service"
+      }
+    }
+    </script>
+
+    <!-- Fonts & Icons -->
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Noto+Kufi+Arabic:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* --- CSS VARIABLES --- */
+        /* --- CSS VARIABLES (VIP THEME) --- */
         :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --primary-glow: rgba(99, 102, 241, 0.5);
-            --secondary: #ec4899;
-            --accent: #10b981;
+            --primary: #6366f1; /* Indigo 500 */
+            --primary-dark: #4338ca;
+            --secondary: #ec4899; /* Pink 500 */
+            --accent: #06b6d4; /* Cyan 500 */
+            --gold: #f59e0b;
             
-            /* Dark Theme (Default) */
-            --bg-body: #0f172a;
-            --bg-surface: rgba(30, 41, 59, 0.7);
+            --bg-body: #0f172a; /* Slate 900 */
+            --bg-surface: rgba(30, 41, 59, 0.6);
             --bg-glass: rgba(15, 23, 42, 0.85);
+            
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --border-color: rgba(255, 255, 255, 0.1);
-            --gradient-cta: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(236, 72, 153, 0.2));
             
+            --radius-sm: 8px;
             --radius-md: 16px;
-            --radius-lg: 24px;
-            --blur: blur(12px);
-            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius-lg: 32px;
             
-            --font-main: 'Vazir', sans-serif;
-            --font-display: 'Vazir', sans-serif;
+            --shadow-3d: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+            --glow: 0 0 20px rgba(99, 102, 241, 0.5);
+            
+            --font-fa: 'Vazir', sans-serif;
+            --font-en: 'Inter', sans-serif;
+            --font-ar: 'Noto Kufi Arabic', sans-serif;
         }
 
-        [data-theme="light"] {
-            --bg-body: #f8fafc;
-            --bg-surface: rgba(255, 255, 255, 0.8);
-            --bg-glass: rgba(255, 255, 255, 0.9);
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --border-color: rgba(0, 0, 0, 0.08);
-            --primary: #4f46e5;
-            --primary-glow: rgba(79, 70, 229, 0.3);
-            --gradient-cta: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(236, 72, 153, 0.1));
-        }
-
-        html.ltr {
-            --font-main: 'Inter', sans-serif;
-            --font-display: 'Poppins', sans-serif;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+        /* Reset & Base */
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; -webkit-tap-highlight-color: transparent; }
         html { scroll-behavior: smooth; overflow-x: hidden; }
         
         body {
-            font-family: var(--font-main);
+            font-family: var(--font-fa);
             background-color: var(--bg-body);
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, rgba(236, 72, 153, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.15) 0px, transparent 50%);
-            background-attachment: fixed;
             color: var(--text-main);
             line-height: 1.7;
             overflow-x: hidden;
-            transition: background-color 0.5s ease, color 0.5s ease;
+            /* Dynamic Mesh Gradient Background */
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(236, 72, 153, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.1) 0px, transparent 50%);
+            background-attachment: fixed;
         }
 
-        /* --- UTILITIES --- */
-        .container { width: 90%; max-width: 1280px; margin: 0 auto; padding: 0 1rem; }
-        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
-        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        /* Language Fonts */
+        html[lang="en"] body { font-family: var(--font-en); }
+        html[lang="ar"] body { font-family: var(--font-ar); }
+
+        .container { width: 92%; max-width: 1280px; margin: 0 auto; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- MEGA NAVIGATION --- */
+        .navbar {
+            position: fixed; top: 0; left: 0; width: 100%;
+            padding: 1rem 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.1);
+            backdrop-filter: blur(0px);
+            transition: all 0.4s ease;
+            border-bottom: 1px solid transparent;
+        }
+        .navbar.scrolled {
+            background: var(--bg-glass);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.8rem 0;
+        }
         
-        .section-padding { padding: 100px 0; }
-        .section-header { text-align: center; max-width: 800px; margin: 0 auto 4rem; }
-        .section-header h2 {
-            font-size: 3rem;
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        
+        .logo {
+            font-size: 1.8rem; font-weight: 900;
             background: linear-gradient(to right, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            display: flex; align-items: center; gap: 10px;
         }
-        .section-header p { color: var(--text-muted); font-size: 1.1rem; }
 
-        /* --- BUTTONS --- */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            padding: 0.875rem 2rem;
+        .nav-menu { display: flex; gap: 2rem; align-items: center; }
+        .nav-item { position: relative; font-weight: 600; color: var(--text-muted); cursor: pointer; padding: 10px 0; }
+        .nav-item:hover { color: var(--text-main); }
+        
+        /* Mega Menu Dropdown */
+        .dropdown {
+            position: absolute; top: 100%; right: 0;
+            width: 250px;
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
             border-radius: var(--radius-md);
-            font-weight: 700;
-            cursor: pointer;
-            border: none;
+            padding: 1rem;
+            opacity: 0; visibility: hidden; transform: translateY(10px);
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-3d);
+        }
+        .nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+        
+        .dropdown a { display: flex; align-items: center; gap: 10px; padding: 0.8rem; border-radius: var(--radius-sm); color: var(--text-muted); }
+        .dropdown a:hover { background: rgba(255,255,255,0.05); color: var(--primary); }
+
+        /* --- HERO SECTION (VIP) --- */
+        .hero {
+            min-height: 100vh;
+            display: flex; align-items: center;
+            padding-top: 80px;
             position: relative;
             overflow: hidden;
-            transition: var(--transition);
-            z-index: 1;
         }
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: #ffffff;
-            box-shadow: 0 8px 20px var(--primary-glow);
+        .hero::before {
+            content: ''; position: absolute; top: -20%; right: -10%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
+            filter: blur(60px); animation: pulse 8s infinite;
         }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 25px var(--primary-glow); }
         
-        .btn-glow {
-            background: var(--text-main);
-            color: var(--bg-body);
-            box-shadow: 0 0 20px rgba(255,255,255,0.5);
+        .hero-content { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center; z-index: 1; }
+        
+        .hero-title { font-size: 4rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
+        .hero-title span { color: transparent; -webkit-text-stroke: 1px var(--secondary); position: relative; }
+        .hero-title span::after { content: attr(data-text); position: absolute; left: 0; top: 0; color: var(--secondary); clip-path: inset(0 100% 0 0); animation: fillText 4s infinite alternate; }
+        
+        @keyframes fillText { 100% { clip-path: inset(0 0 0 0); } }
+        @keyframes pulse { 0%, 100% { opacity: 0.5; transform: scale(1); } 50% { opacity: 0.8; transform: scale(1.1); } }
+
+        /* Buttons with Micro-Motion */
+        .btn-vip {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white; padding: 1rem 2.5rem; border-radius: 50px;
+            font-weight: 800; font-size: 1.1rem; border: none; cursor: pointer;
+            position: relative; overflow: hidden; transition: 0.4s;
+            box-shadow: 0 10px 30px -10px var(--primary);
         }
-        .btn-glow:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(255,255,255,0.8); }
-
-        /* --- HEADER --- */
-        header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.5rem 0; transition: var(--transition); }
-        header.scrolled { padding: 1rem 0; background: var(--bg-glass); backdrop-filter: var(--blur); border-bottom: 1px solid var(--border-color); }
-        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.75rem; font-weight: 900; background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: flex; gap: 0.5rem; align-items: center; }
-        
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links a { font-weight: 600; color: var(--text-muted); position: relative; }
-        .nav-links a:hover, .nav-links a.active { color: var(--primary); }
-        
-        .icon-btn { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border-color); background: var(--bg-surface); color: var(--text-main); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: var(--transition); }
-        .icon-btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
-
-        /* --- HERO --- */
-        .hero { padding: 180px 0 100px; min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; }
-        .hero-content { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center; }
-        .hero-text h1 { font-size: 4rem; margin-bottom: 1.5rem; letter-spacing: -1px; }
-        .hero-text h1 span { color: var(--primary); }
-        .hero-text p { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 2.5rem; }
-        
-        /* --- LOGO MARQUEE --- */
-        .marquee-section { padding: 2rem 0; border-bottom: 1px solid var(--border-color); background: var(--bg-glass); overflow: hidden; }
-        .marquee-content { display: flex; gap: 4rem; animation: marquee 20s linear infinite; width: max-content; }
-        .marquee-item { font-size: 1.5rem; font-weight: bold; color: var(--text-muted); opacity: 0.5; display: flex; align-items: center; gap: 0.5rem; }
-        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        html[dir="rtl"] .marquee-content { animation: marqueeRTL 20s linear infinite; }
-        @keyframes marqueeRTL { 0% { transform: translateX(0); } 100% { transform: translateX(50%); } }
-
-        /* --- PLACEMENT TEST CTA (NEW & HEROIC) --- */
-        .cta-section { position: relative; border-radius: var(--radius-lg); overflow: hidden; margin: 4rem auto; text-align: center; padding: 6rem 2rem; background: var(--gradient-cta); border: 1px solid var(--border-color); }
-        .cta-bg-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%); opacity: 0.5; z-index: 0; pointer-events: none; }
-        .cta-content { position: relative; z-index: 1; }
-        .cta-badge { display: inline-block; background: var(--secondary); color: white; padding: 0.25rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: bold; margin-bottom: 1rem; box-shadow: 0 0 15px rgba(236, 72, 153, 0.5); animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
-
-        /* --- ROADMAP / TIMELINE --- */
-        .roadmap-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; position: relative; }
-        .roadmap-step { background: var(--bg-surface); padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); position: relative; transition: var(--transition); }
-        .roadmap-step:hover { transform: translateY(-10px); border-color: var(--primary); }
-        .step-number { position: absolute; top: -20px; right: 20px; width: 40px; height: 40px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; box-shadow: 0 5px 15px var(--primary-glow); }
-        html.ltr .step-number { right: auto; left: 20px; }
-        
-        /* --- TESTIMONIALS --- */
-        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .testimonial-card { background: var(--bg-surface); padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); }
-        .user-profile { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
-        .user-avatar { width: 50px; height: 50px; background: linear-gradient(45deg, var(--primary), var(--secondary)); border-radius: 50%; }
-        .rating { color: #fbbf24; margin-bottom: 1rem; }
-
-        /* --- FAQ --- */
-        .faq-item { margin-bottom: 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); background: var(--bg-surface); overflow: hidden; transition: var(--transition); }
-        .faq-header { padding: 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; }
-        .faq-body { padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; color: var(--text-muted); }
-        .faq-item.open .faq-body { padding-bottom: 1.5rem; max-height: 200px; }
-        .faq-icon { transition: transform 0.3s ease; }
-        .faq-item.open .faq-icon { transform: rotate(180deg); }
-
-        /* --- FOOTER --- */
-        footer { background: #020617; padding: 80px 0 30px; border-top: 1px solid var(--border-color); margin-top: 100px; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 4rem; }
-        
-        /* RESPONSIVE */
-        @media (max-width: 1024px) {
-            .hero-content { grid-template-columns: 1fr; text-align: center; }
-            .hero-image-wrapper { display: none; }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
+        .btn-vip::before {
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.5s;
         }
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .nav-links { display: none; } /* Add mobile menu logic if needed */
-            .section-header h2 { font-size: 2rem; }
-            .footer-grid { grid-template-columns: 1fr; }
+        .btn-vip:hover { transform: translateY(-3px); box-shadow: 0 20px 40px -10px var(--primary); }
+        .btn-vip:hover::before { left: 100%; }
+
+        /* --- INTERACTIVE MAP SECTION --- */
+        .map-section { padding: 6rem 0; text-align: center; position: relative; }
+        .map-wrapper {
+            position: relative; width: 100%; max-width: 900px; margin: 3rem auto;
+            aspect-ratio: 16/9;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg') no-repeat center center;
+            background-size: contain;
+            filter: invert(1) opacity(0.2); /* Making it look like a blueprint */
+        }
+        
+        .hotspot {
+            position: absolute; width: 15px; height: 15px;
+            background: var(--accent); border-radius: 50%;
+            cursor: pointer; box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.7);
+            animation: pulseRing 2s infinite;
+        }
+        .hotspot:hover { transform: scale(1.2); background: var(--secondary); }
+        
+        .hotspot-uk { top: 25%; left: 48%; } /* Approx coords for example */
+        .hotspot-fr { top: 28%; left: 49%; }
+        .hotspot-de { top: 26%; left: 50%; }
+        
+        .map-tooltip {
+            position: absolute; bottom: 150%; left: 50%; transform: translateX(-50%);
+            width: 220px; background: rgba(15, 23, 42, 0.95);
+            border: 1px solid var(--accent); border-radius: var(--radius-md);
+            padding: 1rem; text-align: right; opacity: 0; visibility: hidden;
+            transition: 0.3s; pointer-events: none; z-index: 10;
+            box-shadow: 0 10px 30px black;
+        }
+        .hotspot:hover .map-tooltip { opacity: 1; visibility: visible; bottom: 120%; }
+
+        @keyframes pulseRing {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(6, 182, 212, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(6, 182, 212, 0); }
+        }
+
+        /* --- 3D COURSE CARDS --- */
+        .courses-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem;
+            perspective: 1000px; /* For 3D effect */
+        }
+        
+        .course-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.5s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+        
+        .course-card:hover {
+            transform: rotateY(10deg) rotateX(5deg) translateY(-15px);
+            box-shadow: -20px 20px 40px rgba(0,0,0,0.5);
+            border-color: var(--primary);
+        }
+        
+        .card-badge {
+            position: absolute; top: 20px; left: 20px;
+            background: var(--gold); color: black;
+            padding: 4px 12px; border-radius: 20px; font-weight: bold; font-size: 0.8rem;
+        }
+
+        /* --- QUICK SPEAK WIDGET (FLOATING) --- */
+        .quick-speak {
+            position: fixed; bottom: 30px; right: 30px;
+            width: 300px; background: rgba(15, 23, 42, 0.95);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.5rem; z-index: 900;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            transform: translateY(0); transition: 0.3s;
+            backdrop-filter: blur(10px);
+        }
+        .quick-speak.minimized { transform: translateY(calc(100% + 30px)); }
+        
+        .speak-mic {
+            width: 60px; height: 60px; background: var(--secondary);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            margin: 1rem auto; font-size: 1.5rem; cursor: pointer;
+            box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.7);
+            animation: pulseRing 2s infinite;
+        }
+
+        /* --- SUCCESS STORIES (DOCUMENTARY STYLE) --- */
+        .success-section { background: #020617; padding: 8rem 0; }
+        .story-card {
+            display: grid; grid-template-columns: 150px 1fr; gap: 2rem;
+            background: linear-gradient(90deg, rgba(255,255,255,0.03), transparent);
+            padding: 2rem; border-left: 4px solid var(--primary);
+            margin-bottom: 2rem; align-items: center;
+        }
+        .story-img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary); }
+        .story-quote { font-size: 1.1rem; font-style: italic; color: var(--text-muted); margin-bottom: 1rem; }
+
+        /* --- BLOG SECTION --- */
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+        .blog-card {
+            background: var(--bg-surface); border-radius: var(--radius-md); overflow: hidden;
+            transition: 0.3s; border: 1px solid var(--border-color);
+        }
+        .blog-card:hover { transform: translateY(-10px); border-color: var(--accent); }
+        .blog-img { width: 100%; height: 200px; background: #333; position: relative; }
+        .blog-content { padding: 1.5rem; }
+        .blog-date { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; display: block; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 992px) {
+            .hero-content { grid-template-columns: 1fr; text-align: center; margin-top: 2rem; }
+            .hero-title { font-size: 3rem; }
+            .nav-menu { display: none; } /* Simple hiding for now, use mobile button */
+            .mobile-menu-btn { display: block; font-size: 1.5rem; cursor: pointer; }
+            .story-card { grid-template-columns: 1fr; text-align: center; }
+            .story-img { margin: 0 auto; }
+            .quick-speak { display: none; } /* Hide on small mobile to save space or make it an icon */
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header id="header">
-        <div class="container nav-wrapper">
-            <a href="#" class="logo">
-                <i class="fas fa-cube"></i>
-                <span>LinguaSphere</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#home" data-i18n="nav_home">خانه</a></li>
-                <li><a href="#roadmap" data-i18n="nav_roadmap">مسیر یادگیری</a></li>
-                <li><a href="#courses" data-i18n="nav_courses">دوره‌ها</a></li>
-                <li><a href="#testimonials" data-i18n="nav_testimonials">نظرات</a></li>
-                <li><a href="#faq" data-i18n="nav_faq">سوالات</a></li>
-            </ul>
-            <div style="display: flex; gap: 1rem; align-items: center;">
-                <button class="icon-btn" id="langToggle">EN</button>
-                <button class="icon-btn" id="themeToggle"><i class="fas fa-moon"></i></button>
-                <a href="#level-check" class="btn btn-primary" data-i18n="btn_start">شروع کنید</a>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <!-- Hero Section -->
-        <section class="hero" id="home">
-            <div class="container hero-content">
-                <div class="hero-text">
-                    <h1 data-i18n="hero_title">تسلط بر زبان، <br> <span>سریع‌تر از همیشه</span></h1>
-                    <p data-i18n="hero_desc">با ترکیب هوش مصنوعی پیشرفته و متدهای نوین، ما یادگیری زبان را به تجربه‌ای لذت‌بخش تبدیل می‌کنیم.</p>
-                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                        <a href="#level-check" class="btn btn-primary" data-i18n="btn_placement">تعیین سطح رایگان</a>
-                        <a href="#courses" class="btn btn-outline" data-i18n="btn_courses">مشاهده دوره‌ها</a>
-                    </div>
-                </div>
-                <!-- 3D Abstract Graphic Placeholder -->
-                <div class="hero-image-wrapper" style="position: relative; height: 400px; background: radial-gradient(circle, rgba(99,102,241,0.2) 0%, transparent 70%); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                    <div style="font-size: 10rem; color: var(--primary); opacity: 0.8; animation: float 6s ease-in-out infinite;"><i class="fas fa-globe-asia"></i></div>
-                </div>
-            </div>
-        </section>
-    <!-- Marquee Language Benefits -->
-    <div class="marquee-section">
-        <div class="marquee-content">
-            <div class="marquee-item">
-                <i class="fas fa-briefcase"></i>
-                <span>Better Career Opportunities</span>
-            </div>
-            <div class="marquee-item">
-                <i class="fas fa-plane"></i>
-                <span>Confident World Travel</span>
-            </div>
-            <div class="marquee-item">
-                <i class="fas fa-brain"></i>
-                <span>Enhanced Memory & Cognitive Skills</span>
-            </div>
-            <div class="marquee-item">
-                <i class="fas fa-users"></i>
-                <span>Connect with Different Cultures</span>
-            </div>
-            <div class="marquee-item">
-                <i class="fas fa-graduation-cap"></i>
-                <span>Study at Top Universities Worldwide</span>
-            </div>
-            <div class="marquee-item">
-                <i class="fas fa-book"></i>
-                <span>Access to More Information Resources</span>
-            </div>
-            <div class="marquee-item">
-                <i class="fas fa-heart"></i>
-                <span>Increased Confidence & Personal Growth</span>
-            </div>
-            <div class="marquee-item">
-                <i class="fas fa-handshake"></i>
-                <span>International Business Opportunities</span>
-            </div>
-            <div class="marquee-item">
-                <i class="fas fa-film"></i>
-                <span>Enjoy Foreign Films & Music</span>
-            </div>
-            <div class="marquee-item">
-                <i class="fas fa-globe"></i>
-                <span>Better Understanding of Global Perspectives</span>
-            </div>
-            <div class="marquee-item">
-                <i class="fas fa-chart-line"></i>
-                <span>Higher Salary Potential</span>
-            </div>
-            <div class="marquee-item">
-                <i class="fas fa-lightbulb"></i>
-                <span>Boosted Creativity & Mental Flexibility</span>
-            </div>
-            <div class="marquee-item">
-                <i class="fas fa-network-wired"></i>
-                <span>Expand Professional Network</span>
-            </div>
-            <div class="marquee-item">
-                <i class="fas fa-laptop-code"></i>
-                <span>Access to Latest Technologies</span>
-            </div>
-            <div class="marquee-item">
-                <i class="fas fa-award"></i>
-                <span>Competitive Edge in Job Market</span>
-            </div>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo"><i class="fas fa-layer-group"></i> ورسک</a>
             
-            <!-- Duplicate for seamless loop -->
-            <div class="marquee-item">
-                <i class="fas fa-briefcase"></i>
-                <span>Better Career Opportunities</span>
-            </div>
-            <div class="marquee-item">
-                <i class="fas fa-plane"></i>
-                <span>Confident World Travel</span>
-            </div>
-            <div class="marquee-item">
-                <i class="fas fa-brain"></i>
-                <span>Enhanced Memory & Cognitive Skills</span>
-            </div>
-            <div class="marquee-item">
-                <i class="fas fa-users"></i>
-                <span>Connect with Different Cultures</span>
-            </div>
-            <div class="marquee-item">
-                <i class="fas fa-graduation-cap"></i>
-                <span>Study at Top Universities Worldwide</span>
+            <!-- Desktop Menu -->
+            <ul class="nav-menu">
+                <li class="nav-item">خانه</li>
+                <li class="nav-item">
+                    دوره‌ها <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i>
+                    <div class="dropdown">
+                        <a href="#"><i class="fas fa-comment"></i> مکالمه فشرده</a>
+                        <a href="#"><i class="fas fa-plane"></i> آیلتس و مهاجرت</a>
+                        <a href="#"><i class="fas fa-briefcase"></i> زبان تجاری</a>
+                    </div>
+                </li>
+                <li class="nav-item">تعیین سطح VIP</li>
+                <li class="nav-item">وبلاگ</li>
+                <li class="nav-item">تماس با ما</li>
+            </ul>
+
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <!-- Language Switcher -->
+                <button onclick="switchLang('en')" style="background:transparent; border:1px solid var(--border-color); color:white; padding:5px 10px; border-radius:8px; cursor:pointer;">EN</button>
+                <button onclick="switchLang('fa')" style="background:rgba(255,255,255,0.1); border:1px solid var(--primary); color:white; padding:5px 10px; border-radius:8px; cursor:pointer;">FA</button>
+                
+                <a href="assessment.html" class="btn-vip" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">ورود / ثبت‌نام</a>
+                <div class="mobile-menu-btn" style="display:none;"><i class="fas fa-bars"></i></div>
             </div>
         </div>
-        <!-- Marquee Logos -->
+    </nav>
 
-        <!-- SMART LEVEL CHECK CTA (FEATURED) -->
-        <section id="level-check" class="container">
-            <div class="cta-section">
-                <div class="cta-bg-glow"></div>
-                <div class="cta-content">
-                    <span class="cta-badge" data-i18n="cta_badge">هوش مصنوعی 2.0</span>
-                    <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;" data-i18n="cta_title">تعیین سطح هوشمند و رایگان</h2>
-                    <p style="max-width: 600px; margin: 0 auto 2.5rem; color: var(--text-muted); font-size: 1.1rem;" data-i18n="cta_desc">
-                        فقط در ۱۰ دقیقه، هوش مصنوعی ما سطح دقیق شما را تحلیل کرده و نقشه‌ی راه اختصاصی شما را ترسیم می‌کند. بدون هزینه، همین حالا شروع کنید.
-                    </p>
-                    <!-- Link to external page as requested -->
-                    <a href="assessment.html" class="btn btn-glow" style="padding: 1rem 3rem; font-size: 1.2rem;">
-                        <i class="fas fa-brain"></i>
-                        <span data-i18n="btn_start_test">شروع آزمون هوشمند</span>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div>
+                <div style="display:inline-block; background:rgba(99, 102, 241, 0.2); color:var(--primary-light); padding:5px 15px; border-radius:20px; font-weight:bold; margin-bottom:1rem; border:1px solid var(--primary);">
+                    🚀 نسل جدید آموزش زبان
+                </div>
+                <h1 class="hero-title">
+                    یادگیری زبان<br>
+                    <span data-text="هوشمندانه‌تر">هوشمندانه‌تر</span>، نه سخت‌تر
+                </h1>
+                <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2.5rem; max-width: 550px;">
+                    در موسسه ورسک، با ترکیب هوش مصنوعی و متدهای تعاملی، مسیر ۵ ساله را در ۱ سال طی کنید. ضمانت بازگشت وجه در صورت عدم رضایت.
+                </p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="assessment.html" class="btn-vip">
+                        <i class="fas fa-brain"></i> شروع تعیین سطح هوشمند
                     </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Roadmap Section -->
-        <section class="section-padding" id="roadmap">
-            <div class="container">
-                <div class="section-header">
-                    <h2 data-i18n="roadmap_title">مسیر موفقیت شما</h2>
-                    <p data-i18n="roadmap_subtitle">ما از اولین قدم تا دریافت مدرک بین‌المللی در کنار شما هستیم.</p>
-                </div>
-                <div class="roadmap-grid">
-                    <div class="roadmap-step">
-                        <div class="step-number">1</div>
-                        <h3 data-i18n="step_1_title">تعیین سطح هوشمند</h3>
-                        <p style="color: var(--text-muted);" data-i18n="step_1_desc">تحلیل دقیق مهارت‌های شما با AI برای جلوگیری از اتلاف وقت.</p>
-                    </div>
-                    <div class="roadmap-step">
-                        <div class="step-number">2</div>
-                        <h3 data-i18n="step_2_title">برنامه اختصاصی</h3>
-                        <p style="color: var(--text-muted);" data-i18n="step_2_desc">دریافت تقویم آموزشی متناسب با هدف و زمان آزاد شما.</p>
-                    </div>
-                    <div class="roadmap-step">
-                        <div class="step-number">3</div>
-                        <h3 data-i18n="step_3_title">کلاس‌های تعاملی</h3>
-                        <p style="color: var(--text-muted);" data-i18n="step_3_desc">شرکت در کلاس‌های لایو و تمرین با اساتید نیتیو.</p>
-                    </div>
-                    <div class="roadmap-step">
-                        <div class="step-number">4</div>
-                        <h3 data-i18n="step_4_title">دریافت مدرک</h3>
-                        <p style="color: var(--text-muted);" data-i18n="step_4_desc">صدور گواهینامه معتبر بین‌المللی و قابل استعلام.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section class="section-padding" id="testimonials" style="background: rgba(0,0,0,0.02);">
-            <div class="container">
-                <div class="section-header">
-                    <h2 data-i18n="testimonials_title">داستان‌های موفقیت</h2>
-                </div>
-                <div class="testimonials-grid">
-                    <div class="testimonial-card">
-                        <div class="user-profile">
-                            <div class="user-avatar"></div>
-                            <div>
-                                <h4>Ali Rezaei</h4>
-                                <small style="color: var(--text-muted);">IELTS Student</small>
-                            </div>
-                        </div>
-                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p style="color: var(--text-muted);" data-i18n="review_1">"سیستم تعیین سطح فوق‌العاده دقیق بود. دقیقاً از جایی شروع کردم که نیاز داشتم و در ۳ ماه نمره ۷ آیلتس گرفتم."</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="user-profile">
-                            <div class="user-avatar" style="background: linear-gradient(45deg, #f59e0b, #ef4444);"></div>
-                            <div>
-                                <h4>Sara Ahmadi</h4>
-                                <small style="color: var(--text-muted);">Business English</small>
-                            </div>
-                        </div>
-                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-                        <p style="color: var(--text-muted);" data-i18n="review_2">"کلاس‌های مکالمه تجاری واقعاً کاربردی بود. الان بدون استرس در جلسات شرکت انگلیسی صحبت می‌کنم."</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section class="section-padding" id="faq">
-            <div class="container" style="max-width: 800px;">
-                <div class="section-header">
-                    <h2 data-i18n="faq_title">سوالات متداول</h2>
+                    <button style="background: transparent; border: 2px solid var(--border-color); color: white; padding: 1rem 2rem; border-radius: 50px; font-weight: bold; cursor: pointer; transition:0.3s;">
+                        <i class="fas fa-play"></i> مشاهده ویدیو معرفی
+                    </button>
                 </div>
                 
-                <div class="faq-item">
-                    <div class="faq-header" onclick="toggleFaq(this)">
-                        <span data-i18n="faq_q1">آیا تعیین سطح واقعاً رایگان است؟</span>
-                        <i class="fas fa-chevron-down faq-icon"></i>
+                <!-- Social Proof -->
+                <div style="margin-top: 3rem; display: flex; align-items: center; gap: 1rem;">
+                    <div style="display: flex;">
+                        <div style="width:40px; height:40px; background:#444; border-radius:50%; border:2px solid var(--bg-body);"></div>
+                        <div style="width:40px; height:40px; background:#555; border-radius:50%; border:2px solid var(--bg-body); margin-right:-15px; z-index:1;"></div>
+                        <div style="width:40px; height:40px; background:#666; border-radius:50%; border:2px solid var(--bg-body); margin-right:-15px; z-index:2;"></div>
                     </div>
-                    <div class="faq-body">
-                        <p style="padding-bottom: 1.5rem;" data-i18n="faq_a1">بله، تعیین سطح هوشمند ما کاملاً رایگان است و نیازی به وارد کردن اطلاعات پرداخت نیست.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-header" onclick="toggleFaq(this)">
-                        <span data-i18n="faq_q2">کلاس‌ها به چه صورت برگزار می‌شود؟</span>
-                        <i class="fas fa-chevron-down faq-icon"></i>
-                    </div>
-                    <div class="faq-body">
-                        <p style="padding-bottom: 1.5rem;" data-i18n="faq_a2">تمامی کلاس‌ها در پلتفرم اختصاصی ما به صورت آنلاین و تعاملی (تصویری و صوتی) برگزار می‌شوند.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-header" onclick="toggleFaq(this)">
-                        <span data-i18n="faq_q3">آیا مدرک پایان دوره معتبر است؟</span>
-                        <i class="fas fa-chevron-down faq-icon"></i>
-                    </div>
-                    <div class="faq-body">
-                        <p style="padding-bottom: 1.5rem;" data-i18n="faq_a3">بله، مدارک ما دارای کد رهگیری بین‌المللی هستند و می‌توانید آن‌ها را در پروفایل لینکدین خود نیز قرار دهید.</p>
+                    <div>
+                        <div style="font-weight: bold; font-size: 1.1rem;">+۱۲۰۰ دانشجو</div>
+                        <div style="color: var(--accent); font-size: 0.9rem;">⭐️ ۴.۹/۵ رضایت کاربران</div>
                     </div>
                 </div>
             </div>
-        </section>
+            
+            <!-- 3D Illustration Placeholder -->
+            <div style="position: relative;">
+                <div style="width: 100%; height: 500px; background: radial-gradient(circle, rgba(236,72,153,0.1), transparent); display: flex; align-items: center; justify-content: center; animation: float 6s infinite ease-in-out;">
+                    <!-- This mimics a 3D element -->
+                    <div style="width: 300px; height: 400px; background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); border-radius: 30px; border: 1px solid rgba(255,255,255,0.2); transform: rotateY(-20deg) rotateX(10deg); box-shadow: 20px 20px 50px rgba(0,0,0,0.5); position: relative;">
+                        <div style="padding: 2rem;">
+                            <div style="width: 60px; height: 60px; background: var(--primary); border-radius: 15px; margin-bottom: 1rem;"></div>
+                            <h3>Veresk AI Coach</h3>
+                            <div style="height: 6px; background: #333; border-radius: 3px; margin: 1rem 0; width: 80%;"></div>
+                            <div style="height: 6px; background: #333; border-radius: 3px; margin: 0.5rem 0; width: 60%;"></div>
+                            <div style="margin-top: 2rem; padding: 1rem; background: rgba(16, 185, 129, 0.2); border-radius: 10px; color: #10b981;">
+                                <i class="fas fa-check-circle"></i> تلفظ صحیح است!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    </main>
+    <!-- Live Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">جهان، کلاس درس شماست</h2>
+            <p style="color: var(--text-muted);">روی کشورها بروید تا ویژگی‌های زبانی آن‌ها را ببینید.</p>
+            
+            <div class="map-wrapper">
+                <!-- UK Hotspot -->
+                <div class="hotspot hotspot-uk">
+                    <div class="map-tooltip">
+                        <h4 style="color: white; margin-bottom: 5px;">🇬🇧 انگلستان</h4>
+                        <p style="font-size: 0.85rem; color: #ccc;">مهد زبان انگلیسی. لهجه بریتیش و تمرکز بر گرامر رسمی.</p>
+                        <div style="margin-top: 5px; color: var(--accent); font-size: 0.8rem;">
+                            <i class="fas fa-volume-up"></i> "Would you like a cup of tea?"
+                        </div>
+                    </div>
+                </div>
+                <!-- Germany Hotspot -->
+                <div class="hotspot hotspot-de">
+                    <div class="map-tooltip">
+                        <h4 style="color: white; margin-bottom: 5px;">🇩🇪 آلمان</h4>
+                        <p style="font-size: 0.85rem; color: #ccc;">زبان علم و فلسفه. ساختار دقیق و منطقی.</p>
+                        <div style="margin-top: 5px; color: var(--accent); font-size: 0.8rem;">
+                            <i class="fas fa-volume-up"></i> "Guten Tag!"
+                        </div>
+                    </div>
+                </div>
+                <!-- France Hotspot -->
+                <div class="hotspot hotspot-fr">
+                    <div class="map-tooltip">
+                        <h4 style="color: white; margin-bottom: 5px;">🇫🇷 فرانسه</h4>
+                        <p style="font-size: 0.85rem; color: #ccc;">زبان عشق و هنر. تلفظ‌های نرم و پیوسته.</p>
+                        <div style="margin-top: 5px; color: var(--accent); font-size: 0.8rem;">
+                            <i class="fas fa-volume-up"></i> "Bonjour, comment ça va?"
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses 3D Section -->
+    <section style="padding: 6rem 0; background: linear-gradient(to bottom, var(--bg-body), #0a0f1f);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.5rem;">دوره‌های VIP ورسک</h2>
+                <p style="color: var(--text-muted);">طراحی شده برای کسانی که وقت برای تلف کردن ندارند.</p>
+            </div>
+            
+            <div class="courses-grid">
+                <!-- Card 1 -->
+                <div class="course-card">
+                    <div class="card-badge">محبوب‌ترین</div>
+                    <div style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"><i class="fas fa-rocket"></i></div>
+                    <h3>مکالمه فشرده ۶ ماهه</h3>
+                    <p style="color: var(--text-muted); margin: 1rem 0;">از سطح صفر تا مکالمه روان در ۶ ماه با متد اختصاصی ورسک.</p>
+                    <ul style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.9rem;">
+                        <li><i class="fas fa-check" style="color:var(--accent)"></i> کلاس‌های ۳ نفره</li>
+                        <li><i class="fas fa-check" style="color:var(--accent)"></i> پشتیبانی ۲۴ ساعته</li>
+                    </ul>
+                    <a href="#" style="color: var(--secondary); font-weight: bold;">مشاهده جزئیات <i class="fas fa-arrow-left"></i></a>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="course-card">
+                    <div style="font-size: 3rem; color: var(--secondary); margin-bottom: 1rem;"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>تضمینی آیلتس ۷+</h3>
+                    <p style="color: var(--text-muted); margin: 1rem 0;">برنامه‌ریزی شخصی برای کسب نمره ۷ و بالاتر در آزمون آیلتس.</p>
+                    <ul style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.9rem;">
+                        <li><i class="fas fa-check" style="color:var(--accent)"></i> تصحیح رایتینگ نامحدود</li>
+                        <li><i class="fas fa-check" style="color:var(--accent)"></i> آزمون‌های آزمایشی</li>
+                    </ul>
+                    <a href="#" style="color: var(--secondary); font-weight: bold;">مشاهده جزئیات <i class="fas fa-arrow-left"></i></a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="course-card">
+                    <div style="font-size: 3rem; color: var(--gold); margin-bottom: 1rem;"><i class="fas fa-briefcase"></i></div>
+                    <h3>انگلیسی تجاری (Business)</h3>
+                    <p style="color: var(--text-muted); margin: 1rem 0;">ویژه مدیران و صاحبان کسب‌وکار برای مذاکرات بین‌المللی.</p>
+                    <ul style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.9rem;">
+                        <li><i class="fas fa-check" style="color:var(--accent)"></i> نگارش ایمیل و قرارداد</li>
+                        <li><i class="fas fa-check" style="color:var(--accent)"></i> اصطلاحات تخصصی</li>
+                    </ul>
+                    <a href="#" style="color: var(--secondary); font-weight: bold;">مشاهده جزئیات <i class="fas fa-arrow-left"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flash Tasks Section (New Content) -->
+    <section style="padding: 4rem 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); background: rgba(255,255,255,0.02);">
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
+            <div style="flex: 1; min-width: 300px;">
+                <h2 style="margin-bottom: 1rem;">تمرین‌های کوتاه روزانه (Flash Tasks)</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">
+                    حتی اگر ۱۵ دقیقه وقت دارید، زبان یاد بگیرید. تمرین‌های میکرو ورسک طراحی شده‌اند تا در مترو، تاکسی یا وقت استراحت انجام شوند.
+                </p>
+                <a href="#" class="btn-vip" style="font-size: 0.9rem; padding: 0.8rem 2rem;">دانلود اپلیکیشن</a>
+            </div>
+            <div style="flex: 1; display: flex; gap: 1rem; overflow-x: auto; padding-bottom: 1rem;">
+                <!-- Task Card -->
+                <div style="min-width: 200px; background: var(--bg-surface); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎧</div>
+                    <h4>لیسنیگ ۳ دقیقه‌ای</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">پادکست خبری کوتاه</p>
+                </div>
+                <div style="min-width: 200px; background: var(--bg-surface); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🗣️</div>
+                    <h4>تلفظ هوشمند</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">تکرار ۵ جمله کاربردی</p>
+                </div>
+                <div style="min-width: 200px; background: var(--bg-surface); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">📝</div>
+                    <h4>کوئیز گرامر</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">۱۰ سوال تستی سریع</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories (Documentary Style) -->
+    <section class="success-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 4rem;">داستان‌های واقعی، تغییرات واقعی</h2>
+            
+            <div class="story-card">
+                <img src="https://placehold.co/200x200/4f46e5/ffffff?text=Ali" alt="Ali Student" class="story-img">
+                <div>
+                    <p class="story-quote">"من بارها کلاس زبان رفته بودم و رها کرده بودم. اما متد ورسک باعث شد زبان بخشی از زندگی روزمره من بشه. الان مدیر فروش یک شرکت در دبی هستم."</p>
+                    <h4 style="color: var(--text-main);">علی رضایی</h4>
+                    <small style="color: var(--primary);">دانش‌آموخته دوره بیزنس - اکنون در دبی</small>
+                </div>
+            </div>
+
+            <div class="story-card" style="border-left: none; border-right: 4px solid var(--secondary); background: linear-gradient(-90deg, rgba(255,255,255,0.03), transparent);">
+                <img src="https://placehold.co/200x200/ec4899/ffffff?text=Sara" alt="Sara Student" class="story-img" style="border-color: var(--secondary); order: 2;">
+                <div style="order: 1; text-align: left;">
+                    <p class="story-quote">"آیلتس ۷ رو توی ۵ ماه گرفتم. چیزی که باورم نمیشد. پشتیبانی منتورینگ ورسک فوق‌العاده بود، انگار یک مربی خصوصی همیشه کنارت داری."</p>
+                    <h4 style="color: var(--text-main);">سارا احمدی</h4>
+                    <small style="color: var(--secondary);">پذیرش تحصیلی از کانادا</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles / Blog Section -->
+    <section style="padding: 6rem 0;">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem;">
+                <div>
+                    <h2 style="font-size: 2rem;">آخرین مقالات آموزشی</h2>
+                    <p style="color: var(--text-muted);">نکات و ترفندهای یادگیری زبان</p>
+                </div>
+                <a href="#" style="color: var(--primary); font-weight: bold;">مشاهده همه <i class="fas fa-arrow-left"></i></a>
+            </div>
+
+            <div class="blog-grid">
+                <!-- Article 1 -->
+                <article class="blog-card">
+                    <div class="blog-img" style="background: url('https://placehold.co/600x400/1e293b/ffffff?text=Article+1') center/cover;"></div>
+                    <div class="blog-content">
+                        <span class="blog-date"><i class="far fa-clock"></i> ۲ روز پیش</span>
+                        <h3>چگونه لهجه امریکن خود را تقویت کنیم؟</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin: 1rem 0;">تکنیک‌های شدووینگ (Shadowing) و استفاده از هوش مصنوعی برای اصلاح تلفظ...</p>
+                        <a href="#" style="color: var(--secondary); font-size: 0.9rem;">ادامه مطلب</a>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="blog-card">
+                    <div class="blog-img" style="background: url('https://placehold.co/600x400/3730a3/ffffff?text=Article+2') center/cover;"></div>
+                    <div class="blog-content">
+                        <span class="blog-date"><i class="far fa-clock"></i> هفته پیش</span>
+                        <h3>آیلتس کامپیوتری یا کاغذی؟ کدام بهتر است؟</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin: 1rem 0;">بررسی کامل مزایا و معایب هر دو آزمون و تجربه داوطلبان اخیر...</p>
+                        <a href="#" style="color: var(--secondary); font-size: 0.9rem;">ادامه مطلب</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Speak Widget (Floating) -->
+    <div class="quick-speak" id="quickSpeak">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <h5 style="color: var(--secondary);">چالش روزانه ⚡</h5>
+            <i class="fas fa-times" onclick="toggleWidget()" style="cursor: pointer; color: var(--text-muted);"></i>
+        </div>
+        <p style="font-size: 0.9rem; color: white; text-align: center; direction: ltr; font-family: var(--font-en); font-weight: bold;">
+            "Perseverance is key to success."
+        </p>
+        <p style="font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-top: 5px;">تلاش مداوم کلید موفقیت است.</p>
+        
+        <div class="speak-mic">
+            <i class="fas fa-microphone" style="color: white;"></i>
+        </div>
+        <p style="text-align: center; font-size: 0.8rem; color: var(--text-muted);">برای تمرین تلفظ ضربه بزنید</p>
+    </div>
 
     <!-- Footer -->
-    <footer>
+    <footer style="background: #000; padding: 4rem 0 2rem; border-top: 1px solid #333; margin-top: 4rem;">
         <div class="container">
-            <div class="footer-grid">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem;">
                 <div>
-                    <a href="#" class="logo" style="margin-bottom: 1rem;"><i class="fas fa-cube"></i> LinguaSphere</a>
-                    <p style="color: var(--text-muted);" data-i18n="footer_desc">ما آموزش زبان را دموکراتیک، هوشمند و در دسترس همه قرار می‌دهیم.</p>
-                </div>
-                <div>
-                    <h4 data-i18n="footer_links">لینک‌ها</h4>
-                    <ul style="list-style: none; line-height: 2;">
-                        <li><a href="#" style="color: var(--text-muted);">درباره ما</a></li>
-                        <li><a href="#" style="color: var(--text-muted);">فرصت‌های شغلی</a></li>
-                        <li><a href="#" style="color: var(--text-muted);">وبلاگ</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 data-i18n="footer_contact">تماس</h4>
-                    <ul style="list-style: none; line-height: 2;">
-                        <li style="color: var(--text-muted);">info@linguasphere.com</li>
-                        <li style="color: var(--text-muted);">+98 21 1234 5678</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 data-i18n="footer_social">شبکه‌های اجتماعی</h4>
-                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
-                        <a href="#" class="icon-btn"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="icon-btn"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="icon-btn"><i class="fab fa-linkedin"></i></a>
+                    <h3 class="logo" style="margin-bottom: 1.5rem;">ورسک</h3>
+                    <p style="color: #888; font-size: 0.9rem;">موسسه زبان ورسک با تکیه بر تکنولوژی و اساتید برتر، مسیر یادگیری را کوتاه و لذت‌بخش می‌کند.</p>
+                    <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+                        <a href="#" style="color: white;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: white;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: white;"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
+                <div>
+                    <h4 style="color: white; margin-bottom: 1.5rem;">لینک‌های سریع</h4>
+                    <ul style="color: #888; font-size: 0.9rem; line-height: 2;">
+                        <li><a href="#">درباره ما</a></li>
+                        <li><a href="#">فرصت‌های شغلی</a></li>
+                        <li><a href="#">قوانین و مقررات</a></li>
+                        <li><a href="assessment.html">تعیین سطح</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: white; margin-bottom: 1.5rem;">تماس</h4>
+                    <ul style="color: #888; font-size: 0.9rem; line-height: 2;">
+                        <li>تهران، خیابان ولیعصر...</li>
+                        <li>021-12345678</li>
+                        <li>info@veresk-institute.com</li>
+                    </ul>
+                </div>
             </div>
-            <div style="text-align: center; border-top: 1px solid var(--border-color); margin-top: 3rem; padding-top: 2rem; color: var(--text-muted); font-size: 0.9rem;">
-                © 2024 LinguaSphere Pro. All rights reserved.
+            <div style="text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #222; color: #555; font-size: 0.85rem;">
+                © 2025 Veresk Institute. All rights reserved.
             </div>
         </div>
     </footer>
 
     <script>
-        /* --- TRANSLATIONS --- */
-        const resources = {
-            fa: {
-                pageTitle: "LinguaSphere Pro - آموزش پیشرفته زبان",
-                nav_home: "خانه",
-                nav_roadmap: "مسیر یادگیری",
-                nav_courses: "دوره‌ها",
-                nav_testimonials: "نظرات",
-                nav_faq: "سوالات",
-                btn_start: "شروع کنید",
-                hero_title: "تسلط بر زبان، <br> <span>سریع‌تر از همیشه</span>",
-                hero_desc: "با ترکیب هوش مصنوعی پیشرفته و متدهای نوین، ما یادگیری زبان را به تجربه‌ای لذت‌بخش تبدیل می‌کنیم.",
-                btn_placement: "تعیین سطح رایگان",
-                btn_courses: "مشاهده دوره‌ها",
-                cta_badge: "هوش مصنوعی 2.0",
-                cta_title: "تعیین سطح هوشمند و رایگان",
-                cta_desc: "فقط در ۱۰ دقیقه، هوش مصنوعی ما سطح دقیق شما را تحلیل کرده و نقشه‌ی راه اختصاصی شما را ترسیم می‌کند. بدون هزینه، همین حالا شروع کنید.",
-                btn_start_test: "شروع آزمون هوشمند",
-                roadmap_title: "مسیر موفقیت شما",
-                roadmap_subtitle: "ما از اولین قدم تا دریافت مدرک بین‌المللی در کنار شما هستیم.",
-                step_1_title: "تعیین سطح هوشمند",
-                step_1_desc: "تحلیل دقیق مهارت‌های شما با AI برای جلوگیری از اتلاف وقت.",
-                step_2_title: "برنامه اختصاصی",
-                step_2_desc: "دریافت تقویم آموزشی متناسب با هدف و زمان آزاد شما.",
-                step_3_title: "کلاس‌های تعاملی",
-                step_3_desc: "شرکت در کلاس‌های لایو و تمرین با اساتید نیتیو.",
-                step_4_title: "دریافت مدرک",
-                step_4_desc: "صدور گواهینامه معتبر بین‌المللی و قابل استعلام.",
-                testimonials_title: "داستان‌های موفقیت",
-                review_1: "\"سیستم تعیین سطح فوق‌العاده دقیق بود. دقیقاً از جایی شروع کردم که نیاز داشتم و در ۳ ماه نمره ۷ آیلتس گرفتم.\"",
-                review_2: "\"کلاس‌های مکالمه تجاری واقعاً کاربردی بود. الان بدون استرس در جلسات شرکت انگلیسی صحبت می‌کنم.\"",
-                faq_title: "سوالات متداول",
-                faq_q1: "آیا تعیین سطح واقعاً رایگان است؟",
-                faq_a1: "بله، تعیین سطح هوشمند ما کاملاً رایگان است و نیازی به وارد کردن اطلاعات پرداخت نیست.",
-                faq_q2: "کلاس‌ها به چه صورت برگزار می‌شود؟",
-                faq_a2: "تمامی کلاس‌ها در پلتفرم اختصاصی ما به صورت آنلاین و تعاملی (تصویری و صوتی) برگزار می‌شوند.",
-                faq_q3: "آیا مدرک پایان دوره معتبر است؟",
-                faq_a3: "بله، مدارک ما دارای کد رهگیری بین‌المللی هستند و می‌توانید آن‌ها را در پروفایل لینکدین خود نیز قرار دهید.",
-                footer_desc: "ما آموزش زبان را دموکراتیک، هوشمند و در دسترس همه قرار می‌دهیم.",
-                footer_links: "لینک‌ها",
-                footer_contact: "تماس",
-                footer_social: "شبکه‌های اجتماعی"
-            },
-            en: {
-                pageTitle: "LinguaSphere Pro - Advanced Language Learning",
-                nav_home: "Home",
-                nav_roadmap: "Roadmap",
-                nav_courses: "Courses",
-                nav_testimonials: "Stories",
-                nav_faq: "FAQ",
-                btn_start: "Get Started",
-                hero_title: "Master Languages <br> <span>Faster Than Ever</span>",
-                hero_desc: "Combining advanced AI with modern methodology, we turn language learning into an enjoyable experience.",
-                btn_placement: "Free Assessment",
-                btn_courses: "View Courses",
-                cta_badge: "AI Powered 2.0",
-                cta_title: "Free Smart Placement Test",
-                cta_desc: "In just 10 minutes, our AI analyzes your exact level and draws your personalized roadmap. Start now for free.",
-                btn_start_test: "Start Smart Test",
-                roadmap_title: "Your Path to Success",
-                roadmap_subtitle: "We are with you from the first step to receiving your international certificate.",
-                step_1_title: "Smart Assessment",
-                step_1_desc: "Precise analysis of your skills with AI to prevent wasted time.",
-                step_2_title: "Personalized Plan",
-                step_2_desc: "Get a study calendar tailored to your goals and free time.",
-                step_3_title: "Interactive Classes",
-                step_3_desc: "Join live classes and practice with native tutors.",
-                step_4_title: "Get Certified",
-                step_4_desc: "Issuance of valid international and verifiable certificates.",
-                testimonials_title: "Success Stories",
-                review_1: "\"The placement system was incredibly accurate. I started exactly where I needed and got IELTS 7 in 3 months.\"",
-                review_2: "\"Business conversation classes were truly practical. I now speak English in company meetings without stress.\"",
-                faq_title: "Frequently Asked Questions",
-                faq_q1: "Is the placement test really free?",
-                faq_a1: "Yes, our smart assessment is completely free and requires no payment information.",
-                faq_q2: "How are classes conducted?",
-                faq_a2: "All classes are held online and interactively (video and audio) on our dedicated platform.",
-                faq_q3: "Is the certificate valid?",
-                faq_a3: "Yes, our certificates have international tracking codes and can be added to your LinkedIn profile.",
-                footer_desc: "We make language education democratic, smart, and accessible to everyone.",
-                footer_links: "Links",
-                footer_contact: "Contact",
-                footer_social: "Social Media"
-            }
-        };
+        // Toggle Widget
+        function toggleWidget() {
+            const w = document.getElementById('quickSpeak');
+            w.classList.toggle('minimized');
+        }
 
-        let currentLang = 'fa';
-
-        // --- APP LOGIC ---
-        document.addEventListener('DOMContentLoaded', () => {
-            // Theme Init
-            if(localStorage.getItem('theme') === 'light') toggleTheme();
-            
-            // Preloader
-            setTimeout(() => {
-                document.getElementById('preloader').style.opacity = 0;
-                document.getElementById('preloader').style.visibility = 'hidden';
-            }, 800);
-
-            // Events
-            document.getElementById('langToggle').addEventListener('click', toggleLanguage);
-            document.getElementById('themeToggle').addEventListener('click', toggleTheme);
-            
-            // Scroll Observer
-            setupScrollReveal();
-            
-            // Header Scroll
-            window.addEventListener('scroll', () => {
-                const header = document.getElementById('header');
-                if(window.scrollY > 50) header.classList.add('scrolled');
-                else header.classList.remove('scrolled');
-            });
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if(window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
         });
 
-        function toggleLanguage() {
-            currentLang = currentLang === 'fa' ? 'en' : 'fa';
-            document.documentElement.setAttribute('lang', currentLang);
-            document.documentElement.setAttribute('dir', currentLang === 'fa' ? 'rtl' : 'ltr');
-            document.documentElement.className = currentLang === 'fa' ? '' : 'ltr';
-            
-            document.getElementById('langToggle').innerText = currentLang === 'fa' ? 'EN' : 'FA';
-            
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if(resources[currentLang][key]) el.innerHTML = resources[currentLang][key];
-            });
-        }
-
-        function toggleTheme() {
+        // Simple Language Switch (Mock)
+        function switchLang(lang) {
             const html = document.documentElement;
-            const isLight = html.getAttribute('data-theme') === 'light';
-            const newTheme = isLight ? 'dark' : 'light';
-            
-            html.setAttribute('data-theme', newTheme);
-            document.getElementById('themeToggle').innerHTML = isLight ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
-            localStorage.setItem('theme', newTheme);
-        }
-
-        function toggleFaq(header) {
-            const item = header.parentElement;
-            item.classList.toggle('open');
-        }
-
-        function setupScrollReveal() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if(entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            });
-            
-            const elements = document.querySelectorAll('.roadmap-step, .testimonial-card, .faq-item, .cta-section');
-            elements.forEach((el, i) => {
-                el.style.opacity = 0;
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'all 0.6s ease';
-                el.style.transitionDelay = (i % 3) * 100 + 'ms';
-                observer.observe(el);
-            });
+            if(lang === 'en') {
+                html.dir = 'ltr';
+                html.lang = 'en';
+                alert("Language switched to English (Demo)");
+            } else {
+                html.dir = 'rtl';
+                html.lang = 'fa';
+            }
         }
         
-        // Placeholder for marquee if needed dynamic logic
+        // Animation on Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+        
+        document.querySelectorAll('.course-card, .blog-card, .story-card').forEach(el => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Animation for Hero Title
+        window.onload = () => {
+            document.querySelector('.hero-title').style.opacity = 1;
+        }
     </script>
 </body>
 </html>
